@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="theme-color" content="#135457"/>
   <title>Mercadito Online — La Eugenia</title>
-  <link rel="icon" type="image/png" href="https://i.imgur.com/p6DpGPS.png"/>
-  <link rel="apple-touch-icon" href="https://i.imgur.com/p6DpGPS.png"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/png" href="https://i.imgur.com/Ks7x1sS.png"/>
+  <link rel="apple-touch-icon" href="https://i.imgur.com/Ks7x1sS.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-
     :root {
       --petroleo:  #135457;
       --petroleo2: #0a3335;
@@ -21,7 +20,6 @@
       --hueso:     #f5f3ec;
       --gris:      #48797c;
     }
-
     body {
       background: var(--petroleo);
       font-family: 'Roboto', sans-serif;
@@ -31,66 +29,40 @@
       flex-direction: column;
       align-items: center;
     }
-
-    .screen {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      max-width: 480px;
-    }
+    .screen { display: none; flex-direction: column; width: 100%; max-width: 480px; }
     .screen.active { display: flex; }
 
-    /* TOPBAR */
+    /* ── TOLDO SVG — pantallas internas ── */
+    .toldo-svg-wrap {
+      background: var(--petroleo);
+      line-height: 0;
+      width: 100%;
+    }
+    .toldo-svg-wrap svg { display: block; width: 100%; }
+
+    /* ── TOPBAR ── */
     .topbar {
       background: var(--petroleo2);
-      padding: 12px 16px;
+      padding: 11px 16px;
       display: flex;
       align-items: center;
       gap: 10px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
       width: 100%;
     }
     .topbar-back { background: none; border: none; color: var(--lima); font-size: 20px; cursor: pointer; padding: 0 4px; line-height: 1; }
     .topbar-title { font-family: Impact, sans-serif; font-size: 17px; color: var(--hueso); letter-spacing: 2px; text-transform: uppercase; flex: 1; }
 
-    /* HERO */
-    .hero {
-      background: var(--petroleo);
-      position: relative;
-      width: 100%;
-    }
+    /* ── HERO ── */
+    .hero { background: var(--petroleo); position: relative; width: 100%; }
+    .toldo-img { width: 100%; display: block; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.55)); }
+    .hero-body { padding: 18px 0 28px; position: relative; }
+    .hero-logo { width: 100%; display: block; }
 
-    /* TOLDO — extremo a extremo con sombra inferior */
-    .toldo-wrap {
-      position: relative;
-      width: 100%;
-      line-height: 0;
-    }
-    .toldo-img {
-      width: 100%;
-      display: block;
-      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.55));
-    }
-
-    /* CUERPO DEL HERO */
-    .hero-body {
-      padding: 18px 0 28px;
-      position: relative;
-    }
-
-    /* LOGO extremo a extremo */
-    .hero-logo {
-      width: 100%;
-      display: block;
-    }
-
-    /* CARTEL COLGANTE — encima del logo con sombra */
+    /* CARTEL ANIMADO */
     .hero-cartel {
       position: absolute;
-      right: 18px;
-      top: -10px;
+      right: 16px;
+      top: -12px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -103,58 +75,27 @@
       50%  { transform: rotate(7deg); }
       100% { transform: rotate(-7deg); }
     }
-    .cadena { width: 1.5px; height: 26px; background: #a07818; }
-    .cartel-label {
-      background: var(--naranja);
-      border: 1.5px solid #8B6914;
-      border-radius: 4px;
-      padding: 7px 13px;
-      font-size: 12px;
-      font-weight: 700;
-      font-style: italic;
-      color: var(--petroleo);
-      filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.55));
+    .cadena { width: 1.5px; height: 40px; background: #a07818; }
+    .cartel-img {
+      width: 80px;
+      filter: drop-shadow(2px 5px 10px rgba(0,0,0,0.6));
     }
 
-    .hero-desc {
-      color: var(--hueso);
-      font-size: 13px;
-      line-height: 1.7;
-      margin-top: 14px;
-      margin-bottom: 8px;
-      padding: 0 18px;
-    }
-    .hero-inst {
-      color: var(--lima);
-      font-size: 12px;
-      font-style: italic;
-      line-height: 1.6;
-      padding: 0 18px;
-    }
+    .hero-desc { color: var(--hueso); font-size: 13px; line-height: 1.7; margin-top: 14px; margin-bottom: 8px; padding: 0 18px; }
+    .hero-inst { color: var(--lima); font-size: 12px; font-style: italic; line-height: 1.6; padding: 0 18px; }
 
-    /* SECCIONES */
+    /* ── SECCIONES ── */
     .sec-crema    { background: var(--hueso);    padding: 20px 16px; width: 100%; }
     .sec-petroleo { background: var(--petroleo); padding: 20px 16px; width: 100%; }
 
     .sec-title       { font-family: Impact, sans-serif; font-size: 18px; color: var(--petroleo); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; }
     .sec-sub         { font-size: 10px; color: var(--gris); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
-    .sec-title-light { font-family: Impact, sans-serif; font-size: 18px; color: var(--lima);    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; }
+    .sec-title-light { font-family: Impact, sans-serif; font-size: 18px; color: var(--lima); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; }
     .sec-sub-light   { font-size: 10px; color: var(--verdecl); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
 
-    /* GRILLA */
-    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 14px; }
-    .cajon {
-      background: var(--blanco);
-      border: 2px solid var(--petroleo);
-      border-radius: 10px;
-      padding: 14px 10px 12px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      position: relative;
-    }
+    /* ── GRILLA ── */
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; margin-bottom: 14px; }
+    .cajon { background: var(--blanco); border: 2px solid var(--petroleo); border-radius: 10px; padding: 14px 10px 12px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 6px; position: relative; }
     .cajon-foto   { font-size: 32px; }
     .cajon-nombre { font-size: 11px; font-weight: 700; color: var(--petroleo); text-transform: uppercase; letter-spacing: .5px; line-height: 1.3; }
     .cajon-precio { font-size: 12px; font-weight: 700; color: var(--blanco); background: var(--petroleo); padding: 2px 10px; border-radius: 20px; }
@@ -164,7 +105,7 @@
     .badge-sin    { position: absolute; top: 7px; right: 7px; background: #c0392b; color: #fff; font-size: 8px; font-weight: 700; padding: 2px 6px; border-radius: 10px; }
     .espera-btn   { background: transparent; border: 1.5px solid #888; border-radius: 8px; font-size: 10px; color: #666; padding: 5px; cursor: pointer; width: 100%; }
 
-    /* CARRITO */
+    /* ── CARRITO ── */
     .cart-bar { background: var(--naranja); border: 2px solid var(--petroleo); border-radius: 12px; padding: 14px; }
     .cart-bar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
     .cart-bar-title  { font-family: Impact, sans-serif; font-size: 14px; color: var(--petroleo); letter-spacing: 1px; text-transform: uppercase; }
@@ -172,11 +113,15 @@
     .cart-empty      { font-size: 12px; color: var(--petroleo); opacity: .6; text-align: center; padding: 6px 0; }
     .cart-item       { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
     .cart-item-nombre{ font-size: 12px; color: var(--petroleo); font-weight: 700; flex: 1; line-height: 1.3; }
-    .cart-ctrl       { display: flex; align-items: center; gap: 6px; }
-    .cart-ctrl button{ background: var(--petroleo); color: var(--naranja); border: none; border-radius: 50%; width: 22px; height: 22px; font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .cart-ctrl span  { font-size: 13px; font-weight: 700; color: var(--petroleo); min-width: 16px; text-align: center; }
+    .cart-ctrl       { display: flex; align-items: center; gap: 8px; }
+    .cart-ctrl button{
+      background: var(--petroleo); color: var(--naranja); border: none; border-radius: 50%;
+      width: 32px; height: 32px; font-size: 18px;
+      cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .cart-ctrl span  { font-size: 14px; font-weight: 700; color: var(--petroleo); min-width: 20px; text-align: center; }
 
-    /* BOTONES UNIFICADOS */
+    /* ── BOTONES UNIFICADOS ── */
     .btn {
       display: block; width: 100%;
       font-family: Impact, sans-serif; font-size: 14px; letter-spacing: 1px; text-transform: uppercase;
@@ -188,9 +133,9 @@
     .btn-naranja  { background: var(--naranja); color: var(--petroleo); border-color: var(--petroleo); }
     .btn-cgv      { background: var(--lima);    color: var(--petroleo); border-color: var(--petroleo); }
     .btn-lima-out { background: transparent;    color: var(--lima);     border-color: var(--lima); }
+    .btn-blanco   { background: var(--blanco);  color: var(--petroleo); border-color: var(--petroleo); }
     .btn-garita   { background: var(--blanco);  color: var(--petroleo); border-color: var(--petroleo); }
     .btn-garita:active { background: var(--naranja); }
-
     .btn-confirmar {
       display: block; width: 100%;
       background: var(--petroleo); color: var(--naranja);
@@ -198,29 +143,22 @@
       padding: 14px; border-radius: 10px; border: 2px solid var(--petroleo);
       cursor: pointer; text-align: center; margin-top: 12px;
     }
-    .btn-cancelar {
-      display: block; width: 100%;
-      background: transparent; color: #c0392b;
-      font-family: 'Roboto', sans-serif; font-size: 12px;
-      padding: 10px; border-radius: 10px; border: 2px solid #c0392b;
-      cursor: pointer; text-align: center;
-    }
 
-    /* PASOS */
-    .pasos { display: flex; flex-direction: column; gap: 14px; }
-    .paso  { display: flex; align-items: flex-start; gap: 12px; }
-    .paso-num { background: var(--naranja); color: var(--petroleo); font-family: Impact, sans-serif; font-size: 16px; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .paso-txt { color: var(--hueso); font-size: 13px; line-height: 1.6; padding-top: 4px; }
-    .paso-txt strong { color: var(--lima); }
-
-    /* FORMS */
+    /* ── FORMS ── */
     .form-group { margin-bottom: 14px; }
     .form-label { display: block; font-size: 10px; font-weight: 700; color: var(--gris); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
-    .form-input { width: 100%; padding: 11px 13px; border: 2px solid var(--gris); border-radius: 8px; font-family: 'Roboto', sans-serif; font-size: 14px; color: var(--petroleo); background: var(--blanco); outline: none; }
+    .form-input { width: 100%; padding: 11px 13px; border: 2px solid var(--gris); border-radius: 8px; font-family: 'Roboto', sans-serif; font-size: 14px; color: var(--petroleo); background: var(--blanco); outline: none; transition: border-color .2s; }
     .form-input:focus { border-color: var(--naranja); }
     .form-hint { font-size: 11px; color: var(--gris); margin-top: 4px; }
 
-    /* PAGO */
+    /* TELÉFONO — igual a Reportes Vecinales */
+    .tel-wrap { display: flex; gap: 8px; }
+    .tel-pais { flex: 0 0 110px; max-width: 110px; padding: 11px 8px; border: 2px solid var(--gris); border-radius: 8px; font-family: 'Roboto', sans-serif; font-size: 13px; color: var(--petroleo); background: var(--blanco); outline: none; }
+    .tel-pais:focus { border-color: var(--naranja); }
+    .tel-num  { flex: 1; min-width: 0; }
+    .otro-pais-wrap { margin-top: 8px; display: none; }
+
+    /* ── PAGO ── */
     .pago-opt { background: var(--blanco); border: 2px solid #dde8dd; border-radius: 10px; padding: 14px; margin-bottom: 12px; cursor: pointer; display: flex; align-items: flex-start; gap: 12px; }
     .pago-opt.selected { border-color: var(--petroleo); }
     .pago-radio { width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--gris); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
@@ -234,14 +172,36 @@
     .banco-label { font-size: 10px; color: var(--verdecl); letter-spacing: 1px; }
     .banco-val   { font-size: 12px; font-weight: 700; color: var(--lima); font-family: monospace; }
 
-    /* CONFIRMACIÓN */
-    .confirm-card    { background: var(--blanco); border-radius: 14px; padding: 22px; margin-bottom: 14px; text-align: center; }
-    .confirm-numero  { font-family: Impact, sans-serif; font-size: 34px; color: var(--petroleo); letter-spacing: 3px; margin-bottom: 6px; }
+    /* ── CONFIRMACIÓN ── */
+    .confirm-card {
+      background: var(--blanco);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 14px;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+    .confirm-brand { display: flex; flex-direction: column; align-items: center; margin-bottom: 14px; gap: 6px; }
+    .confirm-brand img { width: 44px; height: 44px; }
+    .confirm-brand-text { font-family: 'Playfair Display', Georgia, serif; font-size: 14px; color: var(--petroleo); }
+    .confirm-numero  { font-family: Impact, sans-serif; font-size: 36px; color: var(--petroleo); letter-spacing: 3px; margin-bottom: 6px; }
     .confirm-badge   { display: inline-block; background: var(--lima); color: var(--petroleo); font-size: 10px; font-weight: 700; letter-spacing: 2px; padding: 4px 14px; border-radius: 20px; margin-bottom: 14px; }
-    .confirm-detalle { font-size: 13px; color: var(--gris); line-height: 1.8; text-align: left; }
-    .confirm-aviso   { background: #fff3cc; border: 1px solid var(--naranja); border-radius: 10px; padding: 12px 14px; font-size: 12px; color: #8B6914; line-height: 1.6; margin-bottom: 14px; }
+    .confirm-detalle { font-size: 12px; color: var(--gris); line-height: 1.9; text-align: left; }
+    .confirm-detalle strong { color: var(--petroleo); }
 
-    /* GARITA */
+    /* Aviso cancelación — verde claro paleta */
+    .confirm-aviso {
+      background: var(--verdecl);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 12px;
+      color: var(--petroleo);
+      line-height: 1.6;
+      margin-bottom: 14px;
+      text-align: left;
+    }
+
+    /* ── GARITA ── */
     .aviso-garita { background: #fff3cc; border: 1px solid var(--naranja); border-radius: 10px; padding: 11px 13px; font-size: 12px; color: #8B6914; line-height: 1.5; margin-bottom: 16px; }
     .pedido-card  { background: var(--blanco); border-radius: 10px; padding: 13px; margin-bottom: 10px; border-left: 4px solid var(--naranja); }
     .pedido-card.transf { border-left-color: var(--lima); }
@@ -255,7 +215,7 @@
     .pedido-btn { flex: 1; padding: 7px; border-radius: 7px; border: 1.5px solid var(--petroleo); background: transparent; color: var(--petroleo); font-size: 10px; font-weight: 700; cursor: pointer; text-align: center; text-transform: uppercase; }
     .pedido-btn.entregar { background: var(--petroleo); color: var(--naranja); }
 
-    /* ADMIN */
+    /* ── ADMIN ── */
     .tabs-admin { display: flex; background: var(--petroleo2); }
     .tab-a { flex: 1; padding: 11px; text-align: center; font-size: 10px; font-weight: 700; letter-spacing: 1px; color: var(--gris); cursor: pointer; border-bottom: 2px solid transparent; text-transform: uppercase; }
     .tab-a.on { color: var(--lima); border-bottom-color: var(--lima); }
@@ -264,37 +224,37 @@
     .prod-row    { display: flex; justify-content: space-between; font-size: 11px; color: var(--gris); margin-top: 5px; }
     .alerta-stock{ background: #fff3cc; border: 1px solid var(--naranja); border-radius: 7px; padding: 6px 10px; font-size: 10px; color: #8B6914; margin-top: 8px; }
 
-    /* FOOTER */
+    /* ── RESUMEN CARRITO en pantallas internas ── */
+    .cart-resumen { background: var(--naranja); border: 2px solid var(--petroleo); border-radius: 10px; padding: 12px 14px; margin-bottom: 16px; }
+    .cart-resumen-title { font-family: Impact, sans-serif; font-size: 12px; color: var(--petroleo); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; display: flex; justify-content: space-between; }
+    .cart-resumen-item  { font-size: 11px; color: var(--petroleo); display: flex; justify-content: space-between; margin-bottom: 3px; }
+    .cart-resumen-total { font-family: Impact, sans-serif; font-size: 14px; color: var(--petroleo); display: flex; justify-content: space-between; border-top: 1.5px solid var(--petroleo); padding-top: 6px; margin-top: 6px; }
+
+    /* ── FOOTER ── */
     .footer-bar { background: var(--petroleo2); padding: 14px 16px; text-align: center; font-size: 10px; color: var(--gris); letter-spacing: 1.5px; text-transform: uppercase; width: 100%; }
+
+    /* SEPARADOR */
+    .gap { height: 12px; }
+    .gap-lg { height: 20px; }
   </style>
 </head>
 <body>
 
-<!-- HOME -->
+<!-- ══ HOME ══ -->
 <div class="screen active" id="s-home">
-
   <div class="hero">
-    <!-- TOLDO con sombra inferior -->
-    <div class="toldo-wrap">
-      <img class="toldo-img" src="https://i.imgur.com/lEFFEnc.png" alt="Toldo Mercadito Online La Eugenia">
-    </div>
-
-    <!-- CUERPO: logo extremo a extremo + cartel encima -->
+    <img class="toldo-img" src="https://i.imgur.com/lEFFEnc.png" alt="Toldo Mercadito Online La Eugenia">
     <div class="hero-body">
       <img class="hero-logo" src="https://i.imgur.com/MZtSOaL.png" alt="Mercadito Online">
-
-      <!-- CARTEL colgante encima del logo con sombra -->
       <div class="hero-cartel">
         <div class="cadena"></div>
-        <div class="cartel-label">La Eugenia</div>
+        <img class="cartel-img" src="https://i.imgur.com/QSoFluu.png" alt="La Eugenia">
       </div>
-
       <p class="hero-desc">El Mercadito online del Club pone a disposición de los socios productos que representan un aporte individual y, al mismo tiempo, una contribución colectiva para seguir mejorando nuestro entorno.</p>
       <p class="hero-inst">Elegí los productos disponibles, realizá tu pedido y retiralo en la garita.</p>
     </div>
   </div>
 
-  <!-- CATÁLOGO + CARRITO sobre fondo crema -->
   <div class="sec-crema">
     <div class="sec-title">CATÁLOGO</div>
     <div class="sec-sub">Productos disponibles en garita</div>
@@ -326,7 +286,6 @@
         <div class="cajon-nombre" style="color:var(--gris);">Próximamente</div>
       </div>
     </div>
-
     <div class="cart-bar">
       <div class="cart-bar-header">
         <span class="cart-bar-title">🛒 Mi carrito</span>
@@ -337,26 +296,23 @@
     </div>
   </div>
 
-  <!-- CÓMO PEDIR sobre fondo petróleo -->
   <div class="sec-petroleo">
     <div class="sec-title-light">¿CÓMO PEDIR?</div>
     <div class="sec-sub-light">Es muy simple</div>
-    <div class="pasos">
-      <div class="paso"><div class="paso-num">1</div><div class="paso-txt">Elegí los productos y agregá al carrito.</div></div>
-      <div class="paso"><div class="paso-num">2</div><div class="paso-txt">Completá tus datos: nombre, lote y teléfono.</div></div>
-      <div class="paso"><div class="paso-num">3</div><div class="paso-txt">Elegí cómo pagás: <strong>efectivo en garita</strong> o <strong>transferencia</strong>.</div></div>
-      <div class="paso"><div class="paso-num">4</div><div class="paso-txt">Retirá en garita con tu número de pedido.</div></div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="display:flex;align-items:flex-start;gap:12px;"><div style="background:var(--naranja);color:var(--petroleo);font-family:Impact,sans-serif;font-size:16px;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div><div style="color:var(--hueso);font-size:13px;line-height:1.6;padding-top:4px;">Elegí los productos y agregá al carrito.</div></div>
+      <div style="display:flex;align-items:flex-start;gap:12px;"><div style="background:var(--naranja);color:var(--petroleo);font-family:Impact,sans-serif;font-size:16px;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div><div style="color:var(--hueso);font-size:13px;line-height:1.6;padding-top:4px;">Completá tus datos: nombre, lote y teléfono.</div></div>
+      <div style="display:flex;align-items:flex-start;gap:12px;"><div style="background:var(--naranja);color:var(--petroleo);font-family:Impact,sans-serif;font-size:16px;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div><div style="color:var(--hueso);font-size:13px;line-height:1.6;padding-top:4px;">Elegí cómo pagás: <strong style="color:var(--lima);">efectivo en garita</strong> o <strong style="color:var(--lima);">transferencia</strong>.</div></div>
+      <div style="display:flex;align-items:flex-start;gap:12px;"><div style="background:var(--naranja);color:var(--petroleo);font-family:Impact,sans-serif;font-size:16px;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div><div style="color:var(--hueso);font-size:13px;line-height:1.6;padding-top:4px;">Retirá en garita con tu número de pedido.</div></div>
     </div>
   </div>
 
-  <!-- DUDAS sobre fondo crema — solo botón garita -->
   <div class="sec-crema" style="text-align:center;">
     <div class="sec-title">¿TENÉS DUDAS?</div>
     <div class="sec-sub">El personal de garita te ayuda</div>
     <button class="btn btn-garita" id="btn-garita-home">📲 ESCRIBIR A GARITA</button>
   </div>
 
-  <!-- BOTÓN CGV solo sobre fondo petróleo, al final -->
   <div class="sec-petroleo" style="text-align:center;">
     <a class="btn btn-cgv" href="https://clubdecampolaeugenia.taplink.site/" target="_top">IR AL CENTRO DE GESTIÓN VECINAL</a>
   </div>
@@ -364,39 +320,96 @@
   <div class="footer-bar">Club de Campo La Eugenia · Garupá, Misiones</div>
 </div>
 
-<!-- IDENTIFICACIÓN -->
+<!-- ══ IDENTIFICACIÓN ══ -->
 <div class="screen" id="s-identificacion">
+  <div class="toldo-svg-wrap">
+    <svg viewBox="0 0 480 32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <defs><filter id="sh1" x="-5%" y="-5%" width="110%" height="200%"><feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="rgba(0,0,0,0.55)"/></filter></defs>
+      <g filter="url(#sh1)">
+        <path d="M0,0 L40,0 L40,20 Q20,32 0,20 Z" fill="#f5f3ec"/>
+        <path d="M40,0 L80,0 L80,20 Q60,32 40,20 Z" fill="#c4df57"/>
+        <path d="M80,0 L120,0 L120,20 Q100,32 80,20 Z" fill="#f5f3ec"/>
+        <path d="M120,0 L160,0 L160,20 Q140,32 120,20 Z" fill="#c4df57"/>
+        <path d="M160,0 L200,0 L200,20 Q180,32 160,20 Z" fill="#f5f3ec"/>
+        <path d="M200,0 L240,0 L240,20 Q220,32 200,20 Z" fill="#c4df57"/>
+        <path d="M240,0 L280,0 L280,20 Q260,32 240,20 Z" fill="#f5f3ec"/>
+        <path d="M280,0 L320,0 L320,20 Q300,32 280,20 Z" fill="#c4df57"/>
+        <path d="M320,0 L360,0 L360,20 Q340,32 320,20 Z" fill="#f5f3ec"/>
+        <path d="M360,0 L400,0 L400,20 Q380,32 360,20 Z" fill="#c4df57"/>
+        <path d="M400,0 L440,0 L440,20 Q420,32 400,20 Z" fill="#f5f3ec"/>
+        <path d="M440,0 L480,0 L480,20 Q460,32 440,20 Z" fill="#c4df57"/>
+      </g>
+    </svg>
+  </div>
   <div class="topbar">
     <button class="topbar-back" onclick="goTo('s-home')">←</button>
     <span class="topbar-title">Tus datos</span>
   </div>
   <div class="sec-crema" style="flex:1;">
+    <div class="cart-resumen" id="resumen-ident"></div>
     <div class="form-group">
       <label class="form-label">Nombre y apellido *</label>
       <input class="form-input" type="text" id="inp-nombre" placeholder="Ej: María González" autocomplete="name">
     </div>
     <div class="form-group">
       <label class="form-label">Número de lote *</label>
-      <input class="form-input" type="text" id="inp-lote" placeholder="Ej: 142">
+      <input class="form-input" type="text" id="inp-lote" placeholder="Ej: M08">
     </div>
     <div class="form-group">
       <label class="form-label">Teléfono <span style="font-weight:400;text-transform:none;font-size:10px;">(opcional)</span></label>
-      <input class="form-input" type="tel" id="inp-tel" placeholder="Ej: 3764 123456" autocomplete="tel">
-      <div class="form-hint">Si lo ingresás te mandamos la confirmación por WhatsApp.</div>
+      <div class="tel-wrap">
+        <select class="tel-pais" id="pais-cod" onchange="onPaisCod()">
+          <option value="54" selected>🇦🇷 +54 9</option>
+          <option value="55">🇧🇷 +55</option>
+          <option value="595">🇵🇾 +595</option>
+          <option value="598">🇺🇾 +598</option>
+          <option value="56">🇨🇱 +56</option>
+          <option value="591">🇧🇴 +591</option>
+          <option value="34">🇪🇸 +34</option>
+          <option value="1">🇺🇸 +1</option>
+          <option value="otro">🌐 Otro</option>
+        </select>
+        <input class="form-input tel-num" type="tel" id="inp-tel" placeholder="Ej: 3764123456" oninput="soloNumeros(this)">
+      </div>
+      <div class="otro-pais-wrap" id="otro-pais-wrap">
+        <input class="form-input" type="text" id="otro-pais-cod" placeholder="Código de país (ej: 44)" maxlength="4" oninput="soloNumeros(this)" style="margin-top:8px;">
+      </div>
+      <div class="form-hint">Si lo ingresás te mandamos el número de pedido por WhatsApp.</div>
     </div>
     <button class="btn btn-naranja" onclick="goTo('s-pago')">CONTINUAR →</button>
-    <div style="height:12px;"></div>
-    <button class="btn btn-lima-out" onclick="goTo('s-home')">VOLVER AL CARRITO</button>
+  </div>
+  <div class="sec-petroleo">
+    <button class="btn btn-lima-out" onclick="goTo('s-home')">← VOLVER</button>
   </div>
 </div>
 
-<!-- PAGO -->
+<!-- ══ PAGO ══ -->
 <div class="screen" id="s-pago">
+  <div class="toldo-svg-wrap">
+    <svg viewBox="0 0 480 32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <defs><filter id="sh2" x="-5%" y="-5%" width="110%" height="200%"><feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="rgba(0,0,0,0.55)"/></filter></defs>
+      <g filter="url(#sh2)">
+        <path d="M0,0 L40,0 L40,20 Q20,32 0,20 Z" fill="#f5f3ec"/>
+        <path d="M40,0 L80,0 L80,20 Q60,32 40,20 Z" fill="#c4df57"/>
+        <path d="M80,0 L120,0 L120,20 Q100,32 80,20 Z" fill="#f5f3ec"/>
+        <path d="M120,0 L160,0 L160,20 Q140,32 120,20 Z" fill="#c4df57"/>
+        <path d="M160,0 L200,0 L200,20 Q180,32 160,20 Z" fill="#f5f3ec"/>
+        <path d="M200,0 L240,0 L240,20 Q220,32 200,20 Z" fill="#c4df57"/>
+        <path d="M240,0 L280,0 L280,20 Q260,32 240,20 Z" fill="#f5f3ec"/>
+        <path d="M280,0 L320,0 L320,20 Q300,32 280,20 Z" fill="#c4df57"/>
+        <path d="M320,0 L360,0 L360,20 Q340,32 320,20 Z" fill="#f5f3ec"/>
+        <path d="M360,0 L400,0 L400,20 Q380,32 360,20 Z" fill="#c4df57"/>
+        <path d="M400,0 L440,0 L440,20 Q420,32 400,20 Z" fill="#f5f3ec"/>
+        <path d="M440,0 L480,0 L480,20 Q460,32 440,20 Z" fill="#c4df57"/>
+      </g>
+    </svg>
+  </div>
   <div class="topbar">
     <button class="topbar-back" onclick="goTo('s-identificacion')">←</button>
     <span class="topbar-title">Forma de pago</span>
   </div>
   <div class="sec-crema" style="flex:1;">
+    <div class="cart-resumen" id="resumen-pago"></div>
     <div class="pago-opt selected" id="opt-ef" onclick="selPago('ef')">
       <div class="pago-radio on" id="r-ef"></div>
       <div>
@@ -417,37 +430,91 @@
         <div class="banco-row"><span class="banco-label">CBU</span><span class="banco-val">1910229855022900048696</span></div>
         <div class="banco-row"><span class="banco-label">CUIT</span><span class="banco-val">30-63417128-9</span></div>
       </div>
-      <p style="font-size:12px;color:var(--gris);line-height:1.6;margin-bottom:12px;">Transferí el monto exacto. Al tocar "Ya transferí" se abre WhatsApp para que mandes el comprobante al grupo de garita.</p>
+      <p style="font-size:12px;color:var(--gris);line-height:1.6;margin-bottom:12px;">Transferí el monto exacto y luego tocá el botón para notificar a garita.</p>
     </div>
     <button class="btn btn-naranja" id="btn-pagar" onclick="confirmar()">CONFIRMAR PEDIDO →</button>
-    <div style="height:12px;"></div>
-    <button class="btn btn-lima-out" onclick="goTo('s-identificacion')">VOLVER</button>
+  </div>
+  <div class="sec-petroleo">
+    <button class="btn btn-lima-out" onclick="goTo('s-identificacion')">← VOLVER</button>
   </div>
 </div>
 
-<!-- CONFIRMACIÓN -->
+<!-- ══ CONFIRMACIÓN ══ -->
 <div class="screen" id="s-confirmacion">
-  <div class="sec-petroleo" style="flex:1; padding:24px;">
-    <div class="confirm-card">
-      <div style="font-size:32px;margin-bottom:10px;">✅</div>
+  <div class="toldo-svg-wrap">
+    <svg viewBox="0 0 480 32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <defs><filter id="sh3" x="-5%" y="-5%" width="110%" height="200%"><feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="rgba(0,0,0,0.55)"/></filter></defs>
+      <g filter="url(#sh3)">
+        <path d="M0,0 L40,0 L40,20 Q20,32 0,20 Z" fill="#f5f3ec"/>
+        <path d="M40,0 L80,0 L80,20 Q60,32 40,20 Z" fill="#c4df57"/>
+        <path d="M80,0 L120,0 L120,20 Q100,32 80,20 Z" fill="#f5f3ec"/>
+        <path d="M120,0 L160,0 L160,20 Q140,32 120,20 Z" fill="#c4df57"/>
+        <path d="M160,0 L200,0 L200,20 Q180,32 160,20 Z" fill="#f5f3ec"/>
+        <path d="M200,0 L240,0 L240,20 Q220,32 200,20 Z" fill="#c4df57"/>
+        <path d="M240,0 L280,0 L280,20 Q260,32 240,20 Z" fill="#f5f3ec"/>
+        <path d="M280,0 L320,0 L320,20 Q300,32 280,20 Z" fill="#c4df57"/>
+        <path d="M320,0 L360,0 L360,20 Q340,32 320,20 Z" fill="#f5f3ec"/>
+        <path d="M360,0 L400,0 L400,20 Q380,32 360,20 Z" fill="#c4df57"/>
+        <path d="M400,0 L440,0 L440,20 Q420,32 400,20 Z" fill="#f5f3ec"/>
+        <path d="M440,0 L480,0 L480,20 Q460,32 440,20 Z" fill="#c4df57"/>
+      </g>
+    </svg>
+  </div>
+  <div class="topbar">
+    <button class="topbar-back" onclick="goTo('s-home')">←</button>
+    <span class="topbar-title">Pedido confirmado</span>
+  </div>
+  <div class="sec-petroleo" style="flex:1; padding:20px 16px;">
+
+    <div class="confirm-card" id="confirm-card-el">
+      <div class="confirm-brand">
+        <img src="https://i.imgur.com/Ks7x1sS.png" alt="Mercadito Online La Eugenia">
+        <span class="confirm-brand-text">Mercadito Online</span>
+      </div>
       <div style="font-size:11px;color:var(--gris);margin-bottom:4px;letter-spacing:1px;text-transform:uppercase;">Tu número de pedido</div>
       <div class="confirm-numero" id="num-ped">MO-00001</div>
-      <div class="confirm-badge" id="badge-tipo">EFECTIVO · RESERVADO 48 HS</div>
+      <div class="confirm-badge" id="badge-tipo">EFECTIVO</div>
       <div class="confirm-detalle" id="det-confirm"></div>
     </div>
+
     <div class="confirm-aviso">
-      ⚠️ Si querés cancelar tu pedido, <strong>este es el momento</strong>. Una vez que salgas de esta pantalla, deberás hacerlo personalmente en garita.
+      Este pedido reserva productos del stock. Si querés cancelarlo, <strong>hacelo ahora</strong> con el botón de abajo — es rápido y sin drama. Una vez que salgas de esta pantalla, tendrás que acercarte a garita para cancelarlo en persona.
     </div>
-    <button class="btn btn-lima-out">📲 RECIBIR CONFIRMACIÓN POR WHATSAPP</button>
-    <div style="height:12px;"></div>
-    <button class="btn btn-naranja" onclick="goTo('s-home')">VOLVER AL CATÁLOGO</button>
-    <div style="height:12px;"></div>
-    <button class="btn-cancelar" onclick="cancelarPedido()">Cancelar este pedido</button>
+
+    <button class="btn btn-naranja" id="btn-wsp-confirm">📲 ENVIATE LOS DATOS DEL PEDIDO POR WHATSAPP</button>
+    <div class="gap"></div>
+    <button class="btn btn-blanco" onclick="cancelarPedido()">CANCELAR PEDIDO</button>
+    <div class="gap"></div>
+    <button class="btn btn-lima-out" onclick="goTo('s-home')">VOLVER AL INICIO</button>
+    <div class="gap"></div>
+    <button onclick="descargarCard()" style="background:none;border:none;color:var(--verdecl);font-size:12px;cursor:pointer;text-align:center;width:100%;text-decoration:underline;padding:4px 0;">
+      💾 Guardar número de pedido como imagen
+    </button>
+
   </div>
 </div>
 
-<!-- LISTA DE ESPERA -->
+<!-- ══ LISTA DE ESPERA ══ -->
 <div class="screen" id="s-espera">
+  <div class="toldo-svg-wrap">
+    <svg viewBox="0 0 480 32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <defs><filter id="sh4" x="-5%" y="-5%" width="110%" height="200%"><feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="rgba(0,0,0,0.55)"/></filter></defs>
+      <g filter="url(#sh4)">
+        <path d="M0,0 L40,0 L40,20 Q20,32 0,20 Z" fill="#f5f3ec"/>
+        <path d="M40,0 L80,0 L80,20 Q60,32 40,20 Z" fill="#c4df57"/>
+        <path d="M80,0 L120,0 L120,20 Q100,32 80,20 Z" fill="#f5f3ec"/>
+        <path d="M120,0 L160,0 L160,20 Q140,32 120,20 Z" fill="#c4df57"/>
+        <path d="M160,0 L200,0 L200,20 Q180,32 160,20 Z" fill="#f5f3ec"/>
+        <path d="M200,0 L240,0 L240,20 Q220,32 200,20 Z" fill="#c4df57"/>
+        <path d="M240,0 L280,0 L280,20 Q260,32 240,20 Z" fill="#f5f3ec"/>
+        <path d="M280,0 L320,0 L320,20 Q300,32 280,20 Z" fill="#c4df57"/>
+        <path d="M320,0 L360,0 L360,20 Q340,32 320,20 Z" fill="#f5f3ec"/>
+        <path d="M360,0 L400,0 L400,20 Q380,32 360,20 Z" fill="#c4df57"/>
+        <path d="M400,0 L440,0 L440,20 Q420,32 400,20 Z" fill="#f5f3ec"/>
+        <path d="M440,0 L480,0 L480,20 Q460,32 440,20 Z" fill="#c4df57"/>
+      </g>
+    </svg>
+  </div>
   <div class="topbar">
     <button class="topbar-back" onclick="goTo('s-home')">←</button>
     <span class="topbar-title">Lista de espera</span>
@@ -463,7 +530,7 @@
     </div>
     <div class="form-group">
       <label class="form-label">Número de lote *</label>
-      <input class="form-input" type="text" placeholder="Ej: 142">
+      <input class="form-input" type="text" placeholder="Ej: M08">
     </div>
     <div class="form-group">
       <label class="form-label">Teléfono *</label>
@@ -475,13 +542,33 @@
       <input class="form-input" type="number" placeholder="Ej: 2" min="1">
     </div>
     <button class="btn btn-naranja" onclick="goTo('s-home')">ANOTARME EN LA LISTA ✓</button>
-    <div style="height:12px;"></div>
-    <button class="btn btn-lima-out" onclick="goTo('s-home')">VOLVER AL CATÁLOGO</button>
+  </div>
+  <div class="sec-petroleo">
+    <button class="btn btn-lima-out" onclick="goTo('s-home')">← VOLVER AL INICIO</button>
   </div>
 </div>
 
-<!-- PANEL GARITA -->
+<!-- ══ PANEL GARITA ══ -->
 <div class="screen" id="s-garita">
+  <div class="toldo-svg-wrap">
+    <svg viewBox="0 0 480 32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <defs><filter id="sh5" x="-5%" y="-5%" width="110%" height="200%"><feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="rgba(0,0,0,0.55)"/></filter></defs>
+      <g filter="url(#sh5)">
+        <path d="M0,0 L40,0 L40,20 Q20,32 0,20 Z" fill="#f5f3ec"/>
+        <path d="M40,0 L80,0 L80,20 Q60,32 40,20 Z" fill="#c4df57"/>
+        <path d="M80,0 L120,0 L120,20 Q100,32 80,20 Z" fill="#f5f3ec"/>
+        <path d="M120,0 L160,0 L160,20 Q140,32 120,20 Z" fill="#c4df57"/>
+        <path d="M160,0 L200,0 L200,20 Q180,32 160,20 Z" fill="#f5f3ec"/>
+        <path d="M200,0 L240,0 L240,20 Q220,32 200,20 Z" fill="#c4df57"/>
+        <path d="M240,0 L280,0 L280,20 Q260,32 240,20 Z" fill="#f5f3ec"/>
+        <path d="M280,0 L320,0 L320,20 Q300,32 280,20 Z" fill="#c4df57"/>
+        <path d="M320,0 L360,0 L360,20 Q340,32 320,20 Z" fill="#f5f3ec"/>
+        <path d="M360,0 L400,0 L400,20 Q380,32 360,20 Z" fill="#c4df57"/>
+        <path d="M400,0 L440,0 L440,20 Q420,32 400,20 Z" fill="#f5f3ec"/>
+        <path d="M440,0 L480,0 L480,20 Q460,32 440,20 Z" fill="#c4df57"/>
+      </g>
+    </svg>
+  </div>
   <div class="topbar">
     <button class="topbar-back" onclick="goTo('s-home')">←</button>
     <span class="topbar-title">Panel Garita</span>
@@ -495,7 +582,7 @@
         <div class="pedido-num">MO-00042</div>
         <span class="pedido-estado est-conf">Transferencia ✓</span>
       </div>
-      <div class="pedido-socio">Juan Pérez · Lote 87 · 3764 112233</div>
+      <div class="pedido-socio">Juan Pérez · Lote M87 · 3764 112233</div>
       <div class="pedido-items">2× Ponchada media sombra · 1× Foco LED</div>
       <div class="pedido-actions">
         <button class="pedido-btn entregar">✓ Entregar</button>
@@ -508,7 +595,7 @@
         <div class="pedido-num">MO-00043</div>
         <span class="pedido-estado est-pend">Efectivo · 47 hs</span>
       </div>
-      <div class="pedido-socio">Ana Torres · Lote 23</div>
+      <div class="pedido-socio">Ana Torres · Lote B23</div>
       <div class="pedido-items">1× Ponchada media sombra</div>
       <div class="pedido-actions">
         <button class="pedido-btn entregar">✓ Entregar</button>
@@ -522,8 +609,27 @@
   </div>
 </div>
 
-<!-- PANEL ADMIN -->
+<!-- ══ PANEL ADMIN ══ -->
 <div class="screen" id="s-admin">
+  <div class="toldo-svg-wrap">
+    <svg viewBox="0 0 480 32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <defs><filter id="sh6" x="-5%" y="-5%" width="110%" height="200%"><feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="rgba(0,0,0,0.55)"/></filter></defs>
+      <g filter="url(#sh6)">
+        <path d="M0,0 L40,0 L40,20 Q20,32 0,20 Z" fill="#f5f3ec"/>
+        <path d="M40,0 L80,0 L80,20 Q60,32 40,20 Z" fill="#c4df57"/>
+        <path d="M80,0 L120,0 L120,20 Q100,32 80,20 Z" fill="#f5f3ec"/>
+        <path d="M120,0 L160,0 L160,20 Q140,32 120,20 Z" fill="#c4df57"/>
+        <path d="M160,0 L200,0 L200,20 Q180,32 160,20 Z" fill="#f5f3ec"/>
+        <path d="M200,0 L240,0 L240,20 Q220,32 200,20 Z" fill="#c4df57"/>
+        <path d="M240,0 L280,0 L280,20 Q260,32 240,20 Z" fill="#f5f3ec"/>
+        <path d="M280,0 L320,0 L320,20 Q300,32 280,20 Z" fill="#c4df57"/>
+        <path d="M320,0 L360,0 L360,20 Q340,32 320,20 Z" fill="#f5f3ec"/>
+        <path d="M360,0 L400,0 L400,20 Q380,32 360,20 Z" fill="#c4df57"/>
+        <path d="M400,0 L440,0 L440,20 Q420,32 400,20 Z" fill="#f5f3ec"/>
+        <path d="M440,0 L480,0 L480,20 Q460,32 440,20 Z" fill="#c4df57"/>
+      </g>
+    </svg>
+  </div>
   <div class="topbar">
     <button class="topbar-back" onclick="goTo('s-home')">←</button>
     <span class="topbar-title">Panel Admin</span>
@@ -588,15 +694,18 @@
 </div>
 
 <script>
-  var carrito = [];
-  var pedNum  = 1;
-  var pagoSel = 'ef';
+  var carrito  = [];
+  var pedNum   = 1;
+  var pagoSel  = 'ef';
+  var datosConfirm = {};
 
   function goTo(id) {
     document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
     var el = document.getElementById(id);
     if (el) el.classList.add('active');
-    window.scrollTo(0, 0);
+    window.scrollTo(0,0);
+    if (id === 's-identificacion') renderResumen('resumen-ident');
+    if (id === 's-pago')           renderResumen('resumen-pago');
   }
 
   function agregar(nombre, precio) {
@@ -638,6 +747,20 @@
     if (btnConf) btnConf.style.display = 'block';
   }
 
+  function renderResumen(elId) {
+    var el = document.getElementById(elId);
+    if (!el || carrito.length === 0) { if(el) el.style.display='none'; return; }
+    var total = carrito.reduce(function(a,i){ return a + i.precio*i.qty; }, 0);
+    var itemsHtml = carrito.map(function(i){
+      return '<div class="cart-resumen-item"><span>' + i.qty + '× ' + i.nombre + '</span></div>';
+    }).join('');
+    el.innerHTML =
+      '<div class="cart-resumen-title"><span>🛒 Mi carrito</span></div>' +
+      itemsHtml +
+      '<div class="cart-resumen-total"><span>Total</span><span>$ ' + total.toLocaleString('es-AR') + '</span></div>';
+    el.style.display = 'block';
+  }
+
   function selPago(tipo) {
     pagoSel = tipo;
     document.getElementById('opt-ef').classList.toggle('selected', tipo === 'ef');
@@ -649,18 +772,45 @@
   }
 
   function confirmar() {
-    var num = 'MO-' + String(pedNum).padStart(5,'0'); pedNum++;
-    document.getElementById('num-ped').textContent  = num;
-    document.getElementById('badge-tipo').textContent = pagoSel === 'ef'
-      ? 'EFECTIVO · RESERVADO 48 HS' : 'TRANSFERENCIA · SIN VENCIMIENTO';
-    var items = carrito.map(function(i){ return i.qty + '× ' + i.nombre; }).join('<br>');
-    document.getElementById('det-confirm').innerHTML = items;
+    var num    = 'MO-' + String(pedNum).padStart(5,'0'); pedNum++;
+    var nombre = document.getElementById('inp-nombre').value.trim() || '—';
+    var lote   = document.getElementById('inp-lote').value.trim() || '—';
+    var total  = carrito.reduce(function(a,i){ return a + i.precio*i.qty; }, 0);
+    var items  = carrito.map(function(i){ return i.qty + '× ' + i.nombre; });
+    var pickup = pagoSel === 'ef' ? 'Reservado 48 hs' : 'Sin vencimiento';
+
+    datosConfirm = { num: num, nombre: nombre, lote: lote, total: total, items: items, pago: pagoSel, pickup: pickup };
+
+    document.getElementById('num-ped').textContent = num;
+    document.getElementById('badge-tipo').textContent = pagoSel === 'ef' ? 'EFECTIVO' : 'TRANSFERENCIA';
+
+    document.getElementById('det-confirm').innerHTML =
+      '<strong>Socio:</strong> ' + nombre + ' · Lote ' + lote + '<br>' +
+      '<strong>Productos:</strong> ' + items.join(', ') + '<br>' +
+      '<strong>Forma de pago:</strong> ' + (pagoSel === 'ef' ? 'Efectivo al retirar' : 'Transferencia bancaria') + '<br>' +
+      '<strong>Pick up:</strong> ' + pickup;
+
     carrito = []; renderCarrito();
     goTo('s-confirmacion');
+
+    document.getElementById('btn-wsp-confirm').onclick = function() {
+      var msg = '🛒 *Mercadito Online La Eugenia*\n\n' +
+        'Pedido: *' + datosConfirm.num + '*\n' +
+        'Socio: ' + datosConfirm.nombre + ' · Lote ' + datosConfirm.lote + '\n' +
+        'Productos: ' + datosConfirm.items.join(', ') + '\n' +
+        'Pago: ' + (datosConfirm.pago === 'ef' ? 'Efectivo al retirar' : 'Transferencia') + '\n' +
+        'Pick up: ' + datosConfirm.pickup + '\n\n' +
+        'Mostrá este número al guardia al retirar 👆';
+      window.location.href = 'https://wa.me/?text=' + encodeURIComponent(msg);
+    };
   }
 
   function cancelarPedido() {
     if (confirm('¿Confirmás que querés cancelar este pedido?')) goTo('s-home');
+  }
+
+  function descargarCard() {
+    alert('Para guardar: tomá una captura de pantalla de este número de pedido.');
   }
 
   function showTab(id, el) {
@@ -671,6 +821,14 @@
     document.querySelectorAll('.tab-a').forEach(function(t){ t.classList.remove('on'); });
     el.classList.add('on');
   }
+
+  function onPaisCod() {
+    var val = document.getElementById('pais-cod').value;
+    var wrap = document.getElementById('otro-pais-wrap');
+    if (wrap) wrap.style.display = val === 'otro' ? 'block' : 'none';
+  }
+
+  function soloNumeros(el) { el.value = el.value.replace(/[^0-9]/g, ''); }
 
   document.getElementById('btn-garita-home').addEventListener('click', function(){
     window.location.href = 'https://wa.me/5493764113300?text=' + encodeURIComponent('Hola, tengo una consulta sobre el Mercadito Online.');
