@@ -22,7 +22,6 @@
       --gris:      #48797c;
     }
 
-    /* FONDO GENERAL petróleo, contenido centrado */
     body {
       background: var(--petroleo);
       font-family: 'Roboto', sans-serif;
@@ -33,7 +32,6 @@
       align-items: center;
     }
 
-    /* COLUMNA CENTRAL — igual que Tesorería y Reportes */
     .screen {
       display: none;
       flex-direction: column;
@@ -54,99 +52,97 @@
       z-index: 10;
       width: 100%;
     }
-    .topbar-back {
-      background: none;
-      border: none;
-      color: var(--lima);
-      font-size: 20px;
-      cursor: pointer;
-      padding: 0 4px;
-      line-height: 1;
-    }
-    .topbar-title {
-      font-family: Impact, sans-serif;
-      font-size: 17px;
-      color: var(--hueso);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      flex: 1;
-    }
+    .topbar-back { background: none; border: none; color: var(--lima); font-size: 20px; cursor: pointer; padding: 0 4px; line-height: 1; }
+    .topbar-title { font-family: Impact, sans-serif; font-size: 17px; color: var(--hueso); letter-spacing: 2px; text-transform: uppercase; flex: 1; }
 
     /* HERO */
-    .hero { background: var(--petroleo); position: relative; width: 100%; }
-    .toldo-img { width: 100%; display: block; }
-    .hero-body { padding: 16px 20px 28px; position: relative; }
-    .hero-logo { width: 72%; max-width: 290px; display: block; }
+    .hero {
+      background: var(--petroleo);
+      position: relative;
+      width: 100%;
+    }
+
+    /* TOLDO — extremo a extremo con sombra inferior */
+    .toldo-wrap {
+      position: relative;
+      width: 100%;
+      line-height: 0;
+    }
+    .toldo-img {
+      width: 100%;
+      display: block;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.55));
+    }
+
+    /* CUERPO DEL HERO */
+    .hero-body {
+      padding: 18px 0 28px;
+      position: relative;
+    }
+
+    /* LOGO extremo a extremo */
+    .hero-logo {
+      width: 100%;
+      display: block;
+    }
+
+    /* CARTEL COLGANTE — encima del logo con sombra */
     .hero-cartel {
       position: absolute;
       right: 18px;
-      top: 0;
+      top: -10px;
       display: flex;
       flex-direction: column;
       align-items: center;
       transform-origin: top center;
       animation: swing 3.5s ease-in-out infinite;
+      z-index: 2;
     }
     @keyframes swing {
       0%   { transform: rotate(-7deg); }
       50%  { transform: rotate(7deg); }
       100% { transform: rotate(-7deg); }
     }
-    .cadena { width: 1.5px; height: 24px; background: #a07818; }
+    .cadena { width: 1.5px; height: 26px; background: #a07818; }
     .cartel-label {
       background: var(--naranja);
       border: 1.5px solid #8B6914;
       border-radius: 4px;
-      padding: 6px 12px;
-      font-size: 11px;
+      padding: 7px 13px;
+      font-size: 12px;
       font-weight: 700;
       font-style: italic;
       color: var(--petroleo);
-      filter: drop-shadow(1px 3px 4px rgba(0,0,0,0.3));
+      filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.55));
     }
+
     .hero-desc {
       color: var(--hueso);
       font-size: 13px;
       line-height: 1.7;
-      margin-top: 12px;
+      margin-top: 14px;
       margin-bottom: 8px;
+      padding: 0 18px;
     }
     .hero-inst {
       color: var(--lima);
       font-size: 12px;
       font-style: italic;
       line-height: 1.6;
+      padding: 0 18px;
     }
 
     /* SECCIONES */
     .sec-crema    { background: var(--hueso);    padding: 20px 16px; width: 100%; }
     .sec-petroleo { background: var(--petroleo); padding: 20px 16px; width: 100%; }
 
-    .sec-title {
-      font-family: Impact, sans-serif;
-      font-size: 18px;
-      color: var(--petroleo);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 2px;
-    }
-    .sec-sub {
-      font-size: 10px;
-      color: var(--gris);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-    .sec-title-light { font-family: Impact, sans-serif; font-size: 18px; color: var(--lima); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; }
+    .sec-title       { font-family: Impact, sans-serif; font-size: 18px; color: var(--petroleo); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; }
+    .sec-sub         { font-size: 10px; color: var(--gris); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+    .sec-title-light { font-family: Impact, sans-serif; font-size: 18px; color: var(--lima);    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; }
     .sec-sub-light   { font-size: 10px; color: var(--verdecl); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
 
     /* GRILLA */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      margin-bottom: 14px;
-    }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 14px; }
     .cajon {
       background: var(--blanco);
       border: 2px solid var(--petroleo);
@@ -159,283 +155,100 @@
       gap: 6px;
       position: relative;
     }
-    .cajon-foto { font-size: 32px; }
-    .cajon-nombre {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--petroleo);
-      text-transform: uppercase;
-      letter-spacing: .5px;
-      line-height: 1.3;
-    }
-    .cajon-precio {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--blanco);
-      background: var(--petroleo);
-      padding: 2px 10px;
-      border-radius: 20px;
-    }
-    .cajon-btn {
-      background: var(--naranja);
-      border: 2px solid var(--petroleo);
-      border-radius: 8px;
-      font-family: Impact, sans-serif;
-      font-size: 11px;
-      letter-spacing: 1px;
-      color: var(--petroleo);
-      padding: 6px;
-      cursor: pointer;
-      width: 100%;
-      text-transform: uppercase;
-    }
-    .badge-stock {
-      position: absolute;
-      top: 7px; right: 7px;
-      background: var(--lima);
-      color: var(--petroleo);
-      font-size: 8px;
-      font-weight: 700;
-      padding: 2px 6px;
-      border-radius: 10px;
-    }
+    .cajon-foto   { font-size: 32px; }
+    .cajon-nombre { font-size: 11px; font-weight: 700; color: var(--petroleo); text-transform: uppercase; letter-spacing: .5px; line-height: 1.3; }
+    .cajon-precio { font-size: 12px; font-weight: 700; color: var(--blanco); background: var(--petroleo); padding: 2px 10px; border-radius: 20px; }
+    .cajon-btn    { background: var(--naranja); border: 2px solid var(--petroleo); border-radius: 8px; font-family: Impact, sans-serif; font-size: 11px; letter-spacing: 1px; color: var(--petroleo); padding: 6px; cursor: pointer; width: 100%; text-transform: uppercase; }
+    .badge-stock  { position: absolute; top: 7px; right: 7px; background: var(--lima); color: var(--petroleo); font-size: 8px; font-weight: 700; padding: 2px 6px; border-radius: 10px; }
     .cajon.sin-stock { filter: grayscale(1); opacity: .6; }
-    .badge-sin {
-      position: absolute;
-      top: 7px; right: 7px;
-      background: #c0392b;
-      color: #fff;
-      font-size: 8px;
-      font-weight: 700;
-      padding: 2px 6px;
-      border-radius: 10px;
-    }
-    .espera-btn {
-      background: transparent;
-      border: 1.5px solid #888;
-      border-radius: 8px;
-      font-size: 10px;
-      color: #666;
-      padding: 5px;
-      cursor: pointer;
-      width: 100%;
-    }
+    .badge-sin    { position: absolute; top: 7px; right: 7px; background: #c0392b; color: #fff; font-size: 8px; font-weight: 700; padding: 2px 6px; border-radius: 10px; }
+    .espera-btn   { background: transparent; border: 1.5px solid #888; border-radius: 8px; font-size: 10px; color: #666; padding: 5px; cursor: pointer; width: 100%; }
 
     /* CARRITO */
-    .cart-bar {
-      background: var(--naranja);
-      border: 2px solid var(--petroleo);
-      border-radius: 12px;
-      padding: 14px;
-    }
-    .cart-bar-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-    .cart-bar-title {
-      font-family: Impact, sans-serif;
-      font-size: 14px;
-      color: var(--petroleo);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    .cart-bar-total { font-family: Impact, sans-serif; font-size: 16px; color: var(--petroleo); }
-    .cart-empty { font-size: 12px; color: var(--petroleo); opacity: .6; text-align: center; padding: 6px 0; }
-    .cart-item { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
-    .cart-item-nombre { font-size: 12px; color: var(--petroleo); font-weight: 700; flex: 1; line-height: 1.3; }
-    .cart-ctrl { display: flex; align-items: center; gap: 6px; }
-    .cart-ctrl button {
-      background: var(--petroleo);
-      color: var(--naranja);
-      border: none;
-      border-radius: 50%;
-      width: 22px; height: 22px;
-      font-size: 14px;
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .cart-ctrl span { font-size: 13px; font-weight: 700; color: var(--petroleo); min-width: 16px; text-align: center; }
+    .cart-bar { background: var(--naranja); border: 2px solid var(--petroleo); border-radius: 12px; padding: 14px; }
+    .cart-bar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .cart-bar-title  { font-family: Impact, sans-serif; font-size: 14px; color: var(--petroleo); letter-spacing: 1px; text-transform: uppercase; }
+    .cart-bar-total  { font-family: Impact, sans-serif; font-size: 16px; color: var(--petroleo); }
+    .cart-empty      { font-size: 12px; color: var(--petroleo); opacity: .6; text-align: center; padding: 6px 0; }
+    .cart-item       { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+    .cart-item-nombre{ font-size: 12px; color: var(--petroleo); font-weight: 700; flex: 1; line-height: 1.3; }
+    .cart-ctrl       { display: flex; align-items: center; gap: 6px; }
+    .cart-ctrl button{ background: var(--petroleo); color: var(--naranja); border: none; border-radius: 50%; width: 22px; height: 22px; font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .cart-ctrl span  { font-size: 13px; font-weight: 700; color: var(--petroleo); min-width: 16px; text-align: center; }
 
-    /* SISTEMA DE BOTONES UNIFICADO */
+    /* BOTONES UNIFICADOS */
     .btn {
-      display: block;
-      width: 100%;
-      font-family: Impact, sans-serif;
-      font-size: 14px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 14px;
-      border-radius: 10px;
-      border: 2px solid var(--petroleo);
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      transition: opacity .15s, transform .08s;
-      line-height: 1;
+      display: block; width: 100%;
+      font-family: Impact, sans-serif; font-size: 14px; letter-spacing: 1px; text-transform: uppercase;
+      padding: 14px; border-radius: 10px; border: 2px solid var(--petroleo);
+      cursor: pointer; text-align: center; text-decoration: none;
+      transition: opacity .15s, transform .08s; line-height: 1;
     }
     .btn:active { transform: scale(0.97); }
-
     .btn-naranja  { background: var(--naranja); color: var(--petroleo); border-color: var(--petroleo); }
     .btn-cgv      { background: var(--lima);    color: var(--petroleo); border-color: var(--petroleo); }
-    .btn-petroleo { background: var(--petroleo);color: var(--naranja);  border-color: var(--petroleo); }
-    .btn-lima-out { background: transparent;    color: var(--lima);     border-color: var(--lima);     }
-
-    /* Botón garita: blanco por defecto, naranja al tocar */
-    .btn-garita {
-      background: var(--blanco);
-      color: var(--petroleo);
-      border-color: var(--petroleo);
-    }
+    .btn-lima-out { background: transparent;    color: var(--lima);     border-color: var(--lima); }
+    .btn-garita   { background: var(--blanco);  color: var(--petroleo); border-color: var(--petroleo); }
     .btn-garita:active { background: var(--naranja); }
 
     .btn-confirmar {
-      display: block;
-      width: 100%;
-      background: var(--petroleo);
-      color: var(--naranja);
-      font-family: Impact, sans-serif;
-      font-size: 14px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 14px;
-      border-radius: 10px;
-      border: 2px solid var(--petroleo);
-      cursor: pointer;
-      text-align: center;
-      margin-top: 12px;
+      display: block; width: 100%;
+      background: var(--petroleo); color: var(--naranja);
+      font-family: Impact, sans-serif; font-size: 14px; letter-spacing: 1px; text-transform: uppercase;
+      padding: 14px; border-radius: 10px; border: 2px solid var(--petroleo);
+      cursor: pointer; text-align: center; margin-top: 12px;
     }
-
     .btn-cancelar {
-      display: block;
-      width: 100%;
-      background: transparent;
-      color: #c0392b;
-      font-family: 'Roboto', sans-serif;
-      font-size: 12px;
-      padding: 10px;
-      border-radius: 10px;
-      border: 2px solid #c0392b;
-      cursor: pointer;
-      text-align: center;
+      display: block; width: 100%;
+      background: transparent; color: #c0392b;
+      font-family: 'Roboto', sans-serif; font-size: 12px;
+      padding: 10px; border-radius: 10px; border: 2px solid #c0392b;
+      cursor: pointer; text-align: center;
     }
-
-    /* Espaciado entre botones en sección */
-    .btn + .btn { margin-top: 12px; }
-    .btn-garita + .btn-cgv { margin-top: 20px; }
 
     /* PASOS */
     .pasos { display: flex; flex-direction: column; gap: 14px; }
     .paso  { display: flex; align-items: flex-start; gap: 12px; }
-    .paso-num {
-      background: var(--naranja);
-      color: var(--petroleo);
-      font-family: Impact, sans-serif;
-      font-size: 16px;
-      width: 30px; height: 30px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
+    .paso-num { background: var(--naranja); color: var(--petroleo); font-family: Impact, sans-serif; font-size: 16px; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .paso-txt { color: var(--hueso); font-size: 13px; line-height: 1.6; padding-top: 4px; }
     .paso-txt strong { color: var(--lima); }
 
     /* FORMS */
     .form-group { margin-bottom: 14px; }
-    .form-label {
-      display: block;
-      font-size: 10px;
-      font-weight: 700;
-      color: var(--gris);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 5px;
-    }
-    .form-input {
-      width: 100%;
-      padding: 11px 13px;
-      border: 2px solid var(--gris);
-      border-radius: 8px;
-      font-family: 'Roboto', sans-serif;
-      font-size: 14px;
-      color: var(--petroleo);
-      background: var(--blanco);
-      outline: none;
-    }
+    .form-label { display: block; font-size: 10px; font-weight: 700; color: var(--gris); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+    .form-input { width: 100%; padding: 11px 13px; border: 2px solid var(--gris); border-radius: 8px; font-family: 'Roboto', sans-serif; font-size: 14px; color: var(--petroleo); background: var(--blanco); outline: none; }
     .form-input:focus { border-color: var(--naranja); }
     .form-hint { font-size: 11px; color: var(--gris); margin-top: 4px; }
 
     /* PAGO */
-    .pago-opt {
-      background: var(--blanco);
-      border: 2px solid #dde8dd;
-      border-radius: 10px;
-      padding: 14px;
-      margin-bottom: 12px;
-      cursor: pointer;
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-    }
+    .pago-opt { background: var(--blanco); border: 2px solid #dde8dd; border-radius: 10px; padding: 14px; margin-bottom: 12px; cursor: pointer; display: flex; align-items: flex-start; gap: 12px; }
     .pago-opt.selected { border-color: var(--petroleo); }
-    .pago-radio {
-      width: 20px; height: 20px;
-      border-radius: 50%;
-      border: 2px solid var(--gris);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; margin-top: 2px;
-    }
+    .pago-radio { width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--gris); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
     .pago-radio.on { border-color: var(--petroleo); }
     .pago-radio.on::after { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--petroleo); }
     .pago-titulo { font-size: 13px; font-weight: 700; color: var(--petroleo); text-transform: uppercase; letter-spacing: .5px; }
-    .pago-desc { font-size: 11px; color: var(--gris); margin-top: 3px; line-height: 1.5; }
-    .banco-card { background: var(--petroleo2); border-radius: 10px; padding: 14px; margin: 12px 0; }
-    .banco-row  { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .pago-desc   { font-size: 11px; color: var(--gris); margin-top: 3px; line-height: 1.5; }
+    .banco-card  { background: var(--petroleo2); border-radius: 10px; padding: 14px; margin: 12px 0; }
+    .banco-row   { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
     .banco-row:last-child { margin-bottom: 0; }
     .banco-label { font-size: 10px; color: var(--verdecl); letter-spacing: 1px; }
     .banco-val   { font-size: 12px; font-weight: 700; color: var(--lima); font-family: monospace; }
 
     /* CONFIRMACIÓN */
-    .confirm-card {
-      background: var(--blanco);
-      border-radius: 14px;
-      padding: 22px;
-      margin-bottom: 14px;
-      text-align: center;
-    }
-    .confirm-numero { font-family: Impact, sans-serif; font-size: 34px; color: var(--petroleo); letter-spacing: 3px; margin-bottom: 6px; }
-    .confirm-badge { display: inline-block; background: var(--lima); color: var(--petroleo); font-size: 10px; font-weight: 700; letter-spacing: 2px; padding: 4px 14px; border-radius: 20px; margin-bottom: 14px; }
+    .confirm-card    { background: var(--blanco); border-radius: 14px; padding: 22px; margin-bottom: 14px; text-align: center; }
+    .confirm-numero  { font-family: Impact, sans-serif; font-size: 34px; color: var(--petroleo); letter-spacing: 3px; margin-bottom: 6px; }
+    .confirm-badge   { display: inline-block; background: var(--lima); color: var(--petroleo); font-size: 10px; font-weight: 700; letter-spacing: 2px; padding: 4px 14px; border-radius: 20px; margin-bottom: 14px; }
     .confirm-detalle { font-size: 13px; color: var(--gris); line-height: 1.8; text-align: left; }
-    .confirm-aviso {
-      background: #fff3cc;
-      border: 1px solid var(--naranja);
-      border-radius: 10px;
-      padding: 12px 14px;
-      font-size: 12px;
-      color: #8B6914;
-      line-height: 1.6;
-      margin-bottom: 14px;
-    }
+    .confirm-aviso   { background: #fff3cc; border: 1px solid var(--naranja); border-radius: 10px; padding: 12px 14px; font-size: 12px; color: #8B6914; line-height: 1.6; margin-bottom: 14px; }
 
     /* GARITA */
-    .aviso-garita {
-      background: #fff3cc;
-      border: 1px solid var(--naranja);
-      border-radius: 10px;
-      padding: 11px 13px;
-      font-size: 12px;
-      color: #8B6914;
-      line-height: 1.5;
-      margin-bottom: 16px;
-    }
-    .pedido-card { background: var(--blanco); border-radius: 10px; padding: 13px; margin-bottom: 10px; border-left: 4px solid var(--naranja); }
+    .aviso-garita { background: #fff3cc; border: 1px solid var(--naranja); border-radius: 10px; padding: 11px 13px; font-size: 12px; color: #8B6914; line-height: 1.5; margin-bottom: 16px; }
+    .pedido-card  { background: var(--blanco); border-radius: 10px; padding: 13px; margin-bottom: 10px; border-left: 4px solid var(--naranja); }
     .pedido-card.transf { border-left-color: var(--lima); }
     .pedido-num   { font-family: Impact, sans-serif; font-size: 15px; color: var(--petroleo); letter-spacing: 1px; }
     .pedido-socio { font-size: 11px; color: var(--gris); margin: 3px 0 5px; }
     .pedido-items { font-size: 12px; color: var(--petroleo); margin-bottom: 8px; }
-    .pedido-estado { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 3px 9px; border-radius: 10px; text-transform: uppercase; }
+    .pedido-estado{ display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 3px 9px; border-radius: 10px; text-transform: uppercase; }
     .est-pend { background: #fff3cc; color: #8B6914; }
     .est-conf { background: #e8f5e8; color: #2d6e30; }
     .pedido-actions { display: flex; gap: 7px; margin-top: 10px; }
@@ -446,41 +259,42 @@
     .tabs-admin { display: flex; background: var(--petroleo2); }
     .tab-a { flex: 1; padding: 11px; text-align: center; font-size: 10px; font-weight: 700; letter-spacing: 1px; color: var(--gris); cursor: pointer; border-bottom: 2px solid transparent; text-transform: uppercase; }
     .tab-a.on { color: var(--lima); border-bottom-color: var(--lima); }
-    .prod-card { background: var(--blanco); border-radius: 10px; padding: 13px; margin-bottom: 10px; }
+    .prod-card   { background: var(--blanco); border-radius: 10px; padding: 13px; margin-bottom: 10px; }
     .prod-nombre { font-size: 12px; font-weight: 700; color: var(--petroleo); text-transform: uppercase; letter-spacing: .5px; }
-    .prod-row { display: flex; justify-content: space-between; font-size: 11px; color: var(--gris); margin-top: 5px; }
-    .alerta-stock { background: #fff3cc; border: 1px solid var(--naranja); border-radius: 7px; padding: 6px 10px; font-size: 10px; color: #8B6914; margin-top: 8px; }
+    .prod-row    { display: flex; justify-content: space-between; font-size: 11px; color: var(--gris); margin-top: 5px; }
+    .alerta-stock{ background: #fff3cc; border: 1px solid var(--naranja); border-radius: 7px; padding: 6px 10px; font-size: 10px; color: #8B6914; margin-top: 8px; }
 
     /* FOOTER */
-    .footer-bar {
-      background: var(--petroleo2);
-      padding: 14px 16px;
-      text-align: center;
-      font-size: 10px;
-      color: var(--gris);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      width: 100%;
-    }
+    .footer-bar { background: var(--petroleo2); padding: 14px 16px; text-align: center; font-size: 10px; color: var(--gris); letter-spacing: 1.5px; text-transform: uppercase; width: 100%; }
   </style>
 </head>
 <body>
 
 <!-- HOME -->
 <div class="screen active" id="s-home">
+
   <div class="hero">
-    <img class="toldo-img" src="https://i.imgur.com/olO7bxg.png" alt="Toldo Mercadito Online La Eugenia">
+    <!-- TOLDO con sombra inferior -->
+    <div class="toldo-wrap">
+      <img class="toldo-img" src="https://i.imgur.com/lEFFEnc.png" alt="Toldo Mercadito Online La Eugenia">
+    </div>
+
+    <!-- CUERPO: logo extremo a extremo + cartel encima -->
     <div class="hero-body">
       <img class="hero-logo" src="https://i.imgur.com/MZtSOaL.png" alt="Mercadito Online">
+
+      <!-- CARTEL colgante encima del logo con sombra -->
       <div class="hero-cartel">
         <div class="cadena"></div>
         <div class="cartel-label">La Eugenia</div>
       </div>
+
       <p class="hero-desc">El Mercadito online del Club pone a disposición de los socios productos que representan un aporte individual y, al mismo tiempo, una contribución colectiva para seguir mejorando nuestro entorno.</p>
       <p class="hero-inst">Elegí los productos disponibles, realizá tu pedido y retiralo en la garita.</p>
     </div>
   </div>
 
+  <!-- CATÁLOGO + CARRITO sobre fondo crema -->
   <div class="sec-crema">
     <div class="sec-title">CATÁLOGO</div>
     <div class="sec-sub">Productos disponibles en garita</div>
@@ -523,6 +337,7 @@
     </div>
   </div>
 
+  <!-- CÓMO PEDIR sobre fondo petróleo -->
   <div class="sec-petroleo">
     <div class="sec-title-light">¿CÓMO PEDIR?</div>
     <div class="sec-sub-light">Es muy simple</div>
@@ -534,11 +349,15 @@
     </div>
   </div>
 
+  <!-- DUDAS sobre fondo crema — solo botón garita -->
   <div class="sec-crema" style="text-align:center;">
     <div class="sec-title">¿TENÉS DUDAS?</div>
     <div class="sec-sub">El personal de garita te ayuda</div>
     <button class="btn btn-garita" id="btn-garita-home">📲 ESCRIBIR A GARITA</button>
-    <div style="height:20px;"></div>
+  </div>
+
+  <!-- BOTÓN CGV solo sobre fondo petróleo, al final -->
+  <div class="sec-petroleo" style="text-align:center;">
     <a class="btn btn-cgv" href="https://clubdecampolaeugenia.taplink.site/" target="_top">IR AL CENTRO DE GESTIÓN VECINAL</a>
   </div>
 
@@ -668,9 +487,7 @@
     <span class="topbar-title">Panel Garita</span>
   </div>
   <div class="sec-crema" style="flex:1;">
-    <div class="aviso-garita">
-      📋 <strong>Recordatorio:</strong> Verificar stock físico de productos y actualizar el panel si hay diferencias con el sistema.
-    </div>
+    <div class="aviso-garita">📋 <strong>Recordatorio:</strong> Verificar stock físico y actualizar el panel si hay diferencias.</div>
     <div class="sec-title">PEDIDOS ACTIVOS</div>
     <div class="sec-sub">Pendientes de entrega</div>
     <div class="pedido-card transf">
@@ -772,31 +589,26 @@
 
 <script>
   var carrito = [];
-  var pedNum = 1;
+  var pedNum  = 1;
   var pagoSel = 'ef';
 
   function goTo(id) {
-    document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
+    document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
     var el = document.getElementById(id);
     if (el) el.classList.add('active');
     window.scrollTo(0, 0);
   }
 
   function agregar(nombre, precio) {
-    var i = carrito.find(function(x) { return x.nombre === nombre; });
+    var i = carrito.find(function(x){ return x.nombre === nombre; });
     if (i) i.qty++;
     else carrito.push({ nombre: nombre, precio: precio, qty: 1 });
     renderCarrito();
   }
 
-  function quitarUno(idx) {
-    carrito[idx].qty--;
-    if (carrito[idx].qty <= 0) carrito.splice(idx, 1);
-    renderCarrito();
-  }
-
-  function agregarUno(idx) { carrito[idx].qty++; renderCarrito(); }
-  function eliminar(idx)    { carrito.splice(idx, 1); renderCarrito(); }
+  function quitarUno(idx) { carrito[idx].qty--; if (carrito[idx].qty <= 0) carrito.splice(idx,1); renderCarrito(); }
+  function agregarUno(idx){ carrito[idx].qty++; renderCarrito(); }
+  function eliminar(idx)  { carrito.splice(idx,1); renderCarrito(); }
 
   function renderCarrito() {
     var lista   = document.getElementById('cart-lista');
@@ -837,34 +649,30 @@
   }
 
   function confirmar() {
-    var num = 'MO-' + String(pedNum).padStart(5, '0');
-    pedNum++;
-    document.getElementById('num-ped').textContent = num;
+    var num = 'MO-' + String(pedNum).padStart(5,'0'); pedNum++;
+    document.getElementById('num-ped').textContent  = num;
     document.getElementById('badge-tipo').textContent = pagoSel === 'ef'
-      ? 'EFECTIVO · RESERVADO 48 HS'
-      : 'TRANSFERENCIA · SIN VENCIMIENTO';
-    var items = carrito.map(function(i) { return i.qty + '× ' + i.nombre; }).join('<br>');
+      ? 'EFECTIVO · RESERVADO 48 HS' : 'TRANSFERENCIA · SIN VENCIMIENTO';
+    var items = carrito.map(function(i){ return i.qty + '× ' + i.nombre; }).join('<br>');
     document.getElementById('det-confirm').innerHTML = items;
     carrito = []; renderCarrito();
     goTo('s-confirmacion');
   }
 
   function cancelarPedido() {
-    if (confirm('¿Confirmás que querés cancelar este pedido?')) {
-      goTo('s-home');
-    }
+    if (confirm('¿Confirmás que querés cancelar este pedido?')) goTo('s-home');
   }
 
   function showTab(id, el) {
-    ['t-cat', 't-ventas', 't-stock'].forEach(function(t) {
+    ['t-cat','t-ventas','t-stock'].forEach(function(t){
       var e = document.getElementById(t);
       if (e) e.style.display = t === id ? 'block' : 'none';
     });
-    document.querySelectorAll('.tab-a').forEach(function(t) { t.classList.remove('on'); });
+    document.querySelectorAll('.tab-a').forEach(function(t){ t.classList.remove('on'); });
     el.classList.add('on');
   }
 
-  document.getElementById('btn-garita-home').addEventListener('click', function() {
+  document.getElementById('btn-garita-home').addEventListener('click', function(){
     window.location.href = 'https://wa.me/5493764113300?text=' + encodeURIComponent('Hola, tengo una consulta sobre el Mercadito Online.');
   });
 </script>
