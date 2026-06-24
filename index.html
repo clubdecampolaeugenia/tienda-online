@@ -22,18 +22,27 @@
       --gris:      #48797c;
     }
 
+    /* FONDO GENERAL petróleo, contenido centrado */
     body {
       background: var(--petroleo);
       font-family: 'Roboto', sans-serif;
       color: var(--petroleo);
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    /* ── PANTALLAS ── */
-    .screen { display: none; flex-direction: column; }
+    /* COLUMNA CENTRAL — igual que Tesorería y Reportes */
+    .screen {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      max-width: 480px;
+    }
     .screen.active { display: flex; }
 
-    /* ── TOPBAR ── */
+    /* TOPBAR */
     .topbar {
       background: var(--petroleo2);
       padding: 12px 16px;
@@ -43,6 +52,7 @@
       position: sticky;
       top: 0;
       z-index: 10;
+      width: 100%;
     }
     .topbar-back {
       background: none;
@@ -62,14 +72,14 @@
       flex: 1;
     }
 
-    /* ── HERO ── */
-    .hero { background: var(--petroleo); position: relative; }
+    /* HERO */
+    .hero { background: var(--petroleo); position: relative; width: 100%; }
     .toldo-img { width: 100%; display: block; }
     .hero-body { padding: 16px 20px 28px; position: relative; }
-    .hero-logo { width: 74%; max-width: 300px; display: block; }
+    .hero-logo { width: 72%; max-width: 290px; display: block; }
     .hero-cartel {
       position: absolute;
-      right: 20px;
+      right: 18px;
       top: 0;
       display: flex;
       flex-direction: column;
@@ -82,7 +92,7 @@
       50%  { transform: rotate(7deg); }
       100% { transform: rotate(-7deg); }
     }
-    .cadena { width: 1.5px; height: 26px; background: #a07818; }
+    .cadena { width: 1.5px; height: 24px; background: #a07818; }
     .cartel-label {
       background: var(--naranja);
       border: 1.5px solid #8B6914;
@@ -100,7 +110,6 @@
       line-height: 1.7;
       margin-top: 12px;
       margin-bottom: 8px;
-      max-width: 340px;
     }
     .hero-inst {
       color: var(--lima);
@@ -109,9 +118,9 @@
       line-height: 1.6;
     }
 
-    /* ── SECCIONES ── */
-    .sec-crema   { background: var(--hueso);    padding: 22px 16px; }
-    .sec-petroleo{ background: var(--petroleo); padding: 22px 16px; }
+    /* SECCIONES */
+    .sec-crema    { background: var(--hueso);    padding: 20px 16px; width: 100%; }
+    .sec-petroleo { background: var(--petroleo); padding: 20px 16px; width: 100%; }
 
     .sec-title {
       font-family: Impact, sans-serif;
@@ -126,17 +135,17 @@
       color: var(--gris);
       letter-spacing: 1px;
       text-transform: uppercase;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
-    .sec-title-light { font-family: Impact, sans-serif; font-size: 18px; color: var(--lima);  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; }
-    .sec-sub-light   { font-size: 10px; color: var(--verdecl); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+    .sec-title-light { font-family: Impact, sans-serif; font-size: 18px; color: var(--lima); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; }
+    .sec-sub-light   { font-size: 10px; color: var(--verdecl); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
 
-    /* ── GRILLA CATÁLOGO ── */
+    /* GRILLA */
     .grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-bottom: 16px;
+      gap: 10px;
+      margin-bottom: 14px;
     }
     .cajon {
       background: var(--blanco);
@@ -147,12 +156,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 7px;
+      gap: 6px;
       position: relative;
-      transition: transform .12s;
     }
-    .cajon:active { transform: scale(0.97); }
-    .cajon-foto { font-size: 34px; }
+    .cajon-foto { font-size: 32px; }
     .cajon-nombre {
       font-size: 11px;
       font-weight: 700;
@@ -176,15 +183,12 @@
       font-family: Impact, sans-serif;
       font-size: 11px;
       letter-spacing: 1px;
-      font-weight: 700;
       color: var(--petroleo);
       padding: 6px;
       cursor: pointer;
       width: 100%;
       text-transform: uppercase;
-      transition: opacity .15s;
     }
-    .cajon-btn:hover { opacity: .85; }
     .badge-stock {
       position: absolute;
       top: 7px; right: 7px;
@@ -217,7 +221,7 @@
       width: 100%;
     }
 
-    /* ── CARRITO ── */
+    /* CARRITO */
     .cart-bar {
       background: var(--naranja);
       border: 2px solid var(--petroleo);
@@ -237,56 +241,25 @@
       letter-spacing: 1px;
       text-transform: uppercase;
     }
-    .cart-bar-total {
-      font-family: Impact, sans-serif;
-      font-size: 16px;
-      color: var(--petroleo);
-    }
-    .cart-empty {
-      font-size: 12px;
-      color: var(--petroleo);
-      opacity: .6;
-      text-align: center;
-      padding: 6px 0;
-    }
-    .cart-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 8px;
-    }
-    .cart-item-nombre {
-      font-size: 12px;
-      color: var(--petroleo);
-      font-weight: 700;
-      flex: 1;
-      line-height: 1.3;
-    }
+    .cart-bar-total { font-family: Impact, sans-serif; font-size: 16px; color: var(--petroleo); }
+    .cart-empty { font-size: 12px; color: var(--petroleo); opacity: .6; text-align: center; padding: 6px 0; }
+    .cart-item { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+    .cart-item-nombre { font-size: 12px; color: var(--petroleo); font-weight: 700; flex: 1; line-height: 1.3; }
     .cart-ctrl { display: flex; align-items: center; gap: 6px; }
     .cart-ctrl button {
       background: var(--petroleo);
       color: var(--naranja);
       border: none;
       border-radius: 50%;
-      width: 22px;
-      height: 22px;
+      width: 22px; height: 22px;
       font-size: 14px;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
-    .cart-ctrl span {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--petroleo);
-      min-width: 16px;
-      text-align: center;
-    }
+    .cart-ctrl span { font-size: 13px; font-weight: 700; color: var(--petroleo); min-width: 16px; text-align: center; }
 
-    /* ── SISTEMA DE BOTONES UNIFICADO ── */
-    /* Todos los botones comparten la misma base */
+    /* SISTEMA DE BOTONES UNIFICADO */
     .btn {
       display: block;
       width: 100%;
@@ -300,35 +273,24 @@
       cursor: pointer;
       text-align: center;
       text-decoration: none;
-      margin-bottom: 10px;
       transition: opacity .15s, transform .08s;
       line-height: 1;
     }
     .btn:active { transform: scale(0.97); }
-    .btn:last-child { margin-bottom: 0; }
 
-    /* Variantes */
     .btn-naranja  { background: var(--naranja); color: var(--petroleo); border-color: var(--petroleo); }
     .btn-cgv      { background: var(--lima);    color: var(--petroleo); border-color: var(--petroleo); }
     .btn-petroleo { background: var(--petroleo);color: var(--naranja);  border-color: var(--petroleo); }
     .btn-lima-out { background: transparent;    color: var(--lima);     border-color: var(--lima);     }
-    .btn-cancelar {
-      display: block;
-      width: 100%;
-      background: transparent;
-      color: #c0392b;
-      font-family: 'Roboto', sans-serif;
-      font-size: 12px;
-      padding: 10px;
-      border-radius: 10px;
-      border: 2px solid #c0392b;
-      cursor: pointer;
-      text-align: center;
-      margin-top: 4px;
-      transition: opacity .15s;
-    }
 
-    /* Botón confirmar dentro del carrito */
+    /* Botón garita: blanco por defecto, naranja al tocar */
+    .btn-garita {
+      background: var(--blanco);
+      color: var(--petroleo);
+      border-color: var(--petroleo);
+    }
+    .btn-garita:active { background: var(--naranja); }
+
     .btn-confirmar {
       display: block;
       width: 100%;
@@ -344,10 +306,27 @@
       cursor: pointer;
       text-align: center;
       margin-top: 12px;
-      transition: opacity .15s;
     }
 
-    /* ── PASOS ── */
+    .btn-cancelar {
+      display: block;
+      width: 100%;
+      background: transparent;
+      color: #c0392b;
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 2px solid #c0392b;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    /* Espaciado entre botones en sección */
+    .btn + .btn { margin-top: 12px; }
+    .btn-garita + .btn-cgv { margin-top: 20px; }
+
+    /* PASOS */
     .pasos { display: flex; flex-direction: column; gap: 14px; }
     .paso  { display: flex; align-items: flex-start; gap: 12px; }
     .paso-num {
@@ -363,7 +342,7 @@
     .paso-txt { color: var(--hueso); font-size: 13px; line-height: 1.6; padding-top: 4px; }
     .paso-txt strong { color: var(--lima); }
 
-    /* ── FORMS ── */
+    /* FORMS */
     .form-group { margin-bottom: 14px; }
     .form-label {
       display: block;
@@ -384,12 +363,11 @@
       color: var(--petroleo);
       background: var(--blanco);
       outline: none;
-      transition: border-color .2s;
     }
     .form-input:focus { border-color: var(--naranja); }
     .form-hint { font-size: 11px; color: var(--gris); margin-top: 4px; }
 
-    /* ── PAGO ── */
+    /* PAGO */
     .pago-opt {
       background: var(--blanco);
       border: 2px solid #dde8dd;
@@ -400,7 +378,6 @@
       display: flex;
       align-items: flex-start;
       gap: 12px;
-      transition: border-color .15s;
     }
     .pago-opt.selected { border-color: var(--petroleo); }
     .pago-radio {
@@ -411,28 +388,16 @@
       flex-shrink: 0; margin-top: 2px;
     }
     .pago-radio.on { border-color: var(--petroleo); }
-    .pago-radio.on::after {
-      content: '';
-      width: 10px; height: 10px;
-      border-radius: 50%;
-      background: var(--petroleo);
-    }
-    .pago-titulo {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--petroleo);
-      text-transform: uppercase;
-      letter-spacing: .5px;
-    }
+    .pago-radio.on::after { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--petroleo); }
+    .pago-titulo { font-size: 13px; font-weight: 700; color: var(--petroleo); text-transform: uppercase; letter-spacing: .5px; }
     .pago-desc { font-size: 11px; color: var(--gris); margin-top: 3px; line-height: 1.5; }
-
     .banco-card { background: var(--petroleo2); border-radius: 10px; padding: 14px; margin: 12px 0; }
     .banco-row  { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
     .banco-row:last-child { margin-bottom: 0; }
     .banco-label { font-size: 10px; color: var(--verdecl); letter-spacing: 1px; }
     .banco-val   { font-size: 12px; font-weight: 700; color: var(--lima); font-family: monospace; }
 
-    /* ── CONFIRMACIÓN ── */
+    /* CONFIRMACIÓN */
     .confirm-card {
       background: var(--blanco);
       border-radius: 14px;
@@ -440,24 +405,8 @@
       margin-bottom: 14px;
       text-align: center;
     }
-    .confirm-numero {
-      font-family: Impact, sans-serif;
-      font-size: 34px;
-      color: var(--petroleo);
-      letter-spacing: 3px;
-      margin-bottom: 6px;
-    }
-    .confirm-badge {
-      display: inline-block;
-      background: var(--lima);
-      color: var(--petroleo);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      padding: 4px 14px;
-      border-radius: 20px;
-      margin-bottom: 14px;
-    }
+    .confirm-numero { font-family: Impact, sans-serif; font-size: 34px; color: var(--petroleo); letter-spacing: 3px; margin-bottom: 6px; }
+    .confirm-badge { display: inline-block; background: var(--lima); color: var(--petroleo); font-size: 10px; font-weight: 700; letter-spacing: 2px; padding: 4px 14px; border-radius: 20px; margin-bottom: 14px; }
     .confirm-detalle { font-size: 13px; color: var(--gris); line-height: 1.8; text-align: left; }
     .confirm-aviso {
       background: #fff3cc;
@@ -468,10 +417,9 @@
       color: #8B6914;
       line-height: 1.6;
       margin-bottom: 14px;
-      text-align: left;
     }
 
-    /* ── PANEL GARITA ── */
+    /* GARITA */
     .aviso-garita {
       background: #fff3cc;
       border: 1px solid var(--naranja);
@@ -482,75 +430,28 @@
       line-height: 1.5;
       margin-bottom: 16px;
     }
-    .pedido-card {
-      background: var(--blanco);
-      border-radius: 10px;
-      padding: 13px;
-      margin-bottom: 10px;
-      border-left: 4px solid var(--naranja);
-    }
+    .pedido-card { background: var(--blanco); border-radius: 10px; padding: 13px; margin-bottom: 10px; border-left: 4px solid var(--naranja); }
     .pedido-card.transf { border-left-color: var(--lima); }
     .pedido-num   { font-family: Impact, sans-serif; font-size: 15px; color: var(--petroleo); letter-spacing: 1px; }
     .pedido-socio { font-size: 11px; color: var(--gris); margin: 3px 0 5px; }
     .pedido-items { font-size: 12px; color: var(--petroleo); margin-bottom: 8px; }
-    .pedido-estado {
-      display: inline-block;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      padding: 3px 9px;
-      border-radius: 10px;
-      text-transform: uppercase;
-    }
+    .pedido-estado { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 3px 9px; border-radius: 10px; text-transform: uppercase; }
     .est-pend { background: #fff3cc; color: #8B6914; }
     .est-conf { background: #e8f5e8; color: #2d6e30; }
     .pedido-actions { display: flex; gap: 7px; margin-top: 10px; }
-    .pedido-btn {
-      flex: 1;
-      padding: 7px;
-      border-radius: 7px;
-      border: 1.5px solid var(--petroleo);
-      background: transparent;
-      color: var(--petroleo);
-      font-size: 10px;
-      font-weight: 700;
-      cursor: pointer;
-      text-align: center;
-      text-transform: uppercase;
-    }
+    .pedido-btn { flex: 1; padding: 7px; border-radius: 7px; border: 1.5px solid var(--petroleo); background: transparent; color: var(--petroleo); font-size: 10px; font-weight: 700; cursor: pointer; text-align: center; text-transform: uppercase; }
     .pedido-btn.entregar { background: var(--petroleo); color: var(--naranja); }
 
-    /* ── PANEL ADMIN ── */
+    /* ADMIN */
     .tabs-admin { display: flex; background: var(--petroleo2); }
-    .tab-a {
-      flex: 1;
-      padding: 11px;
-      text-align: center;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--gris);
-      cursor: pointer;
-      border-bottom: 2px solid transparent;
-      text-transform: uppercase;
-      transition: color .15s;
-    }
+    .tab-a { flex: 1; padding: 11px; text-align: center; font-size: 10px; font-weight: 700; letter-spacing: 1px; color: var(--gris); cursor: pointer; border-bottom: 2px solid transparent; text-transform: uppercase; }
     .tab-a.on { color: var(--lima); border-bottom-color: var(--lima); }
-
     .prod-card { background: var(--blanco); border-radius: 10px; padding: 13px; margin-bottom: 10px; }
     .prod-nombre { font-size: 12px; font-weight: 700; color: var(--petroleo); text-transform: uppercase; letter-spacing: .5px; }
     .prod-row { display: flex; justify-content: space-between; font-size: 11px; color: var(--gris); margin-top: 5px; }
-    .alerta-stock {
-      background: #fff3cc;
-      border: 1px solid var(--naranja);
-      border-radius: 7px;
-      padding: 6px 10px;
-      font-size: 10px;
-      color: #8B6914;
-      margin-top: 8px;
-    }
+    .alerta-stock { background: #fff3cc; border: 1px solid var(--naranja); border-radius: 7px; padding: 6px 10px; font-size: 10px; color: #8B6914; margin-top: 8px; }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     .footer-bar {
       background: var(--petroleo2);
       padding: 14px 16px;
@@ -559,16 +460,14 @@
       color: var(--gris);
       letter-spacing: 1.5px;
       text-transform: uppercase;
+      width: 100%;
     }
   </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════
-     PANTALLA HOME
-══════════════════════════════════ -->
+<!-- HOME -->
 <div class="screen active" id="s-home">
-
   <div class="hero">
     <img class="toldo-img" src="https://i.imgur.com/olO7bxg.png" alt="Toldo Mercadito Online La Eugenia">
     <div class="hero-body">
@@ -638,16 +537,15 @@
   <div class="sec-crema" style="text-align:center;">
     <div class="sec-title">¿TENÉS DUDAS?</div>
     <div class="sec-sub">El personal de garita te ayuda</div>
-    <button class="btn btn-naranja" id="btn-garita">📲 ESCRIBIR A GARITA</button>
+    <button class="btn btn-garita" id="btn-garita-home">📲 ESCRIBIR A GARITA</button>
+    <div style="height:20px;"></div>
     <a class="btn btn-cgv" href="https://clubdecampolaeugenia.taplink.site/" target="_top">IR AL CENTRO DE GESTIÓN VECINAL</a>
   </div>
 
   <div class="footer-bar">Club de Campo La Eugenia · Garupá, Misiones</div>
 </div>
 
-<!-- ══════════════════════════════════
-     PANTALLA IDENTIFICACIÓN
-══════════════════════════════════ -->
+<!-- IDENTIFICACIÓN -->
 <div class="screen" id="s-identificacion">
   <div class="topbar">
     <button class="topbar-back" onclick="goTo('s-home')">←</button>
@@ -663,18 +561,17 @@
       <input class="form-input" type="text" id="inp-lote" placeholder="Ej: 142">
     </div>
     <div class="form-group">
-      <label class="form-label">Teléfono <span style="font-weight:400;text-transform:none;">(opcional)</span></label>
+      <label class="form-label">Teléfono <span style="font-weight:400;text-transform:none;font-size:10px;">(opcional)</span></label>
       <input class="form-input" type="tel" id="inp-tel" placeholder="Ej: 3764 123456" autocomplete="tel">
       <div class="form-hint">Si lo ingresás te mandamos la confirmación por WhatsApp.</div>
     </div>
     <button class="btn btn-naranja" onclick="goTo('s-pago')">CONTINUAR →</button>
+    <div style="height:12px;"></div>
     <button class="btn btn-lima-out" onclick="goTo('s-home')">VOLVER AL CARRITO</button>
   </div>
 </div>
 
-<!-- ══════════════════════════════════
-     PANTALLA PAGO
-══════════════════════════════════ -->
+<!-- PAGO -->
 <div class="screen" id="s-pago">
   <div class="topbar">
     <button class="topbar-back" onclick="goTo('s-identificacion')">←</button>
@@ -704,13 +601,12 @@
       <p style="font-size:12px;color:var(--gris);line-height:1.6;margin-bottom:12px;">Transferí el monto exacto. Al tocar "Ya transferí" se abre WhatsApp para que mandes el comprobante al grupo de garita.</p>
     </div>
     <button class="btn btn-naranja" id="btn-pagar" onclick="confirmar()">CONFIRMAR PEDIDO →</button>
+    <div style="height:12px;"></div>
     <button class="btn btn-lima-out" onclick="goTo('s-identificacion')">VOLVER</button>
   </div>
 </div>
 
-<!-- ══════════════════════════════════
-     PANTALLA CONFIRMACIÓN
-══════════════════════════════════ -->
+<!-- CONFIRMACIÓN -->
 <div class="screen" id="s-confirmacion">
   <div class="sec-petroleo" style="flex:1; padding:24px;">
     <div class="confirm-card">
@@ -724,14 +620,14 @@
       ⚠️ Si querés cancelar tu pedido, <strong>este es el momento</strong>. Una vez que salgas de esta pantalla, deberás hacerlo personalmente en garita.
     </div>
     <button class="btn btn-lima-out">📲 RECIBIR CONFIRMACIÓN POR WHATSAPP</button>
+    <div style="height:12px;"></div>
     <button class="btn btn-naranja" onclick="goTo('s-home')">VOLVER AL CATÁLOGO</button>
+    <div style="height:12px;"></div>
     <button class="btn-cancelar" onclick="cancelarPedido()">Cancelar este pedido</button>
   </div>
 </div>
 
-<!-- ══════════════════════════════════
-     PANTALLA LISTA DE ESPERA
-══════════════════════════════════ -->
+<!-- LISTA DE ESPERA -->
 <div class="screen" id="s-espera">
   <div class="topbar">
     <button class="topbar-back" onclick="goTo('s-home')">←</button>
@@ -760,13 +656,12 @@
       <input class="form-input" type="number" placeholder="Ej: 2" min="1">
     </div>
     <button class="btn btn-naranja" onclick="goTo('s-home')">ANOTARME EN LA LISTA ✓</button>
+    <div style="height:12px;"></div>
     <button class="btn btn-lima-out" onclick="goTo('s-home')">VOLVER AL CATÁLOGO</button>
   </div>
 </div>
 
-<!-- ══════════════════════════════════
-     PANTALLA PANEL GARITA
-══════════════════════════════════ -->
+<!-- PANEL GARITA -->
 <div class="screen" id="s-garita">
   <div class="topbar">
     <button class="topbar-back" onclick="goTo('s-home')">←</button>
@@ -810,9 +705,7 @@
   </div>
 </div>
 
-<!-- ══════════════════════════════════
-     PANTALLA PANEL ADMIN
-══════════════════════════════════ -->
+<!-- PANEL ADMIN -->
 <div class="screen" id="s-admin">
   <div class="topbar">
     <button class="topbar-back" onclick="goTo('s-home')">←</button>
@@ -823,7 +716,6 @@
     <div class="tab-a" onclick="showTab('t-ventas',this)">Ventas</div>
     <div class="tab-a" onclick="showTab('t-stock',this)">Stock</div>
   </div>
-
   <div id="t-cat" class="sec-crema" style="flex:1;">
     <div class="prod-card">
       <div style="display:flex;justify-content:space-between;align-items:center;">
@@ -852,7 +744,6 @@
     </div>
     <button class="btn btn-naranja" style="margin-top:4px;">+ AGREGAR PRODUCTO</button>
   </div>
-
   <div id="t-ventas" class="sec-crema" style="flex:1;display:none;">
     <div class="sec-title">VENTAS DEL MES</div>
     <div class="sec-sub">Junio 2026</div>
@@ -867,7 +758,6 @@
     </div>
     <button class="btn btn-naranja">📧 ENVIAR INFORME POR EMAIL</button>
   </div>
-
   <div id="t-stock" class="sec-crema" style="flex:1;display:none;">
     <div class="sec-title">ESTADO DE STOCK</div>
     <div class="sec-sub">Con alertas de reposición</div>
@@ -886,14 +776,14 @@
   var pagoSel = 'ef';
 
   function goTo(id) {
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
     var el = document.getElementById(id);
     if (el) el.classList.add('active');
     window.scrollTo(0, 0);
   }
 
   function agregar(nombre, precio) {
-    var i = carrito.find(x => x.nombre === nombre);
+    var i = carrito.find(function(x) { return x.nombre === nombre; });
     if (i) i.qty++;
     else carrito.push({ nombre: nombre, precio: precio, qty: 1 });
     renderCarrito();
@@ -906,11 +796,10 @@
   }
 
   function agregarUno(idx) { carrito[idx].qty++; renderCarrito(); }
-
-  function eliminar(idx) { carrito.splice(idx, 1); renderCarrito(); }
+  function eliminar(idx)    { carrito.splice(idx, 1); renderCarrito(); }
 
   function renderCarrito() {
-    var lista = document.getElementById('cart-lista');
+    var lista   = document.getElementById('cart-lista');
     var totalEl = document.getElementById('cart-total-bar');
     var btnConf = document.getElementById('btn-confirmar');
     if (!lista) return;
@@ -975,8 +864,7 @@
     el.classList.add('on');
   }
 
-  // WhatsApp garita
-  document.getElementById('btn-garita').addEventListener('click', function() {
+  document.getElementById('btn-garita-home').addEventListener('click', function() {
     window.location.href = 'https://wa.me/5493764113300?text=' + encodeURIComponent('Hola, tengo una consulta sobre el Mercadito Online.');
   });
 </script>
