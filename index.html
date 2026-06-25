@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="theme-color" content="#135457"/>
   <title>La Tienda del Club — La Eugenia</title>
-  <link rel="icon" type="image/png" href="https://i.imgur.com/Ks7x1sS.png"/>
-  <link rel="apple-touch-icon" href="https://i.imgur.com/Ks7x1sS.png"/>
+  <link rel="icon" type="image/png" href="https://i.imgur.com/Jjb6FcG.png"/>
+  <link rel="apple-touch-icon" href="https://i.imgur.com/Jjb6FcG.png"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
@@ -35,7 +35,7 @@
     /* HERO */
     .hero { background: var(--petroleo); width: 100%; }
     .toldo-hero { width: 100%; display: block; }
-    .hero-body { padding: 0 0 24px; margin-top: -4px; }
+    .hero-body { padding: 0 0 24px; margin-top: -10px; }
 
     /* BADGE */
     .hero-badge { display: flex; justify-content: center; margin-bottom: 14px; }
@@ -210,7 +210,7 @@
     <img class="toldo-hero" src="https://i.imgur.com/1BmESsb.png" alt="La Tienda del Club">
     <div class="hero-body">
       <div class="hero-logo-wrap">
-        <img class="hero-logo" src="https://i.imgur.com/2tWTy8U.png" alt="La Tienda del Club">
+        <img class="hero-logo" src="https://i.imgur.com/fwVDZWC.png" alt="La Tienda del Club">
       </div>
       <p class="hero-desc">La Tienda del Club pone a disposición de los socios productos que representan un aporte individual y, al mismo tiempo, una contribución colectiva para seguir mejorando nuestro entorno.</p>
       <p class="hero-inst">Elegí los productos disponibles, realizá tu pedido y retiralo en la garita.</p>
@@ -224,7 +224,7 @@
       <div class="cajon" id="cajon-0">
         <span class="badge-stock">Stock: 12</span>
         <div class="cajon-selected-badge" id="badge-sel-0"></div>
-        <div class="cajon-foto">🌿</div>
+        <div class="cajon-foto"><img src="https://i.imgur.com/cZ3q0Lo.png" style="width:56px;height:56px;object-fit:contain;"></div>
         <div class="cajon-nombre">Ponchada media sombra</div>
         <div class="cajon-precio">$ —</div>
         <button class="cajon-btn" onclick="agregar(0,'Ponchada media sombra',0)">+ Agregar</button>
@@ -232,14 +232,14 @@
       <div class="cajon" id="cajon-1">
         <span class="badge-stock">Stock: 5</span>
         <div class="cajon-selected-badge" id="badge-sel-1"></div>
-        <div class="cajon-foto">💡</div>
+        <div class="cajon-foto"><img src="https://i.imgur.com/3WkACKc.png" style="width:56px;height:56px;object-fit:contain;"></div>
         <div class="cajon-nombre">Foco LED 50W E40</div>
         <div class="cajon-precio">$ —</div>
         <button class="cajon-btn" onclick="agregar(1,'Foco LED 50W E40',0)">+ Agregar</button>
       </div>
       <div class="cajon sin-stock">
         <span class="badge-sin">Sin stock</span>
-        <div class="cajon-foto">⚠️</div>
+        <div class="cajon-foto"><img src="https://i.imgur.com/a4lfVw2.png" style="width:56px;height:56px;object-fit:contain;"></div>
         <div class="cajon-nombre">Cartel alerta vecinal</div>
         <div class="cajon-precio" style="background:#aaa;">$ —</div>
         <button class="cajon-btn" style="background:#ccc;border-color:#aaa;color:#888;cursor:default;">Sin stock</button>
@@ -373,12 +373,10 @@
 
     <div class="confirm-card">
       <div class="confirm-brand">
-        <img src="https://i.imgur.com/Ks7x1sS.png" alt="La Tienda del Club">
-        <span class="confirm-brand-sub">La Eugenia</span>
-        <span class="confirm-brand-text">LA TIENDA DEL CLUB</span>
+        <img src="https://i.imgur.com/LB9NODF.png" alt="La Tienda del Club — La Eugenia" style="width:180px;object-fit:contain;">
       </div>
       <div style="font-size:11px;color:var(--gris);margin-bottom:4px;letter-spacing:1px;text-transform:uppercase;">Número de pedido</div>
-      <div class="confirm-numero" id="num-ped">TClub Nº000001</div>
+      <div class="confirm-numero" id="num-ped">TC Nº 000001</div>
       <div class="confirm-badge" id="badge-tipo">EFECTIVO</div>
       <div class="ticket-detalle" id="det-confirm"></div>
       <hr class="ticket-sep" style="margin-top:14px;margin-bottom:12px;">
@@ -446,7 +444,7 @@
     <div class="sec-sub">Pendientes de entrega</div>
     <div class="pedido-card transf">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-        <div class="pedido-num">TClub Nº000042</div>
+        <div class="pedido-num">TC Nº 000042</div>
         <span class="pedido-estado est-conf">Transferencia ✓</span>
       </div>
       <div class="pedido-socio">Juan Pérez · Lote M87 · 3764 112233</div>
@@ -459,7 +457,7 @@
     </div>
     <div class="pedido-card">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-        <div class="pedido-num">TClub Nº000043</div>
+        <div class="pedido-num">TC Nº 000043</div>
         <span class="pedido-estado est-pend">Efectivo · vence 26/06</span>
       </div>
       <div class="pedido-socio">Ana Torres · Lote B23</div>
@@ -735,7 +733,7 @@
   }
 
   function confirmar() {
-    var num    = 'TClub Nº' + String(pedNum).padStart(6,'0'); pedNum++;
+    var num    = 'TC Nº ' + String(pedNum).padStart(6,'0'); pedNum++;
     var nombre = document.getElementById('inp-nombre').value.trim();
     var lote   = document.getElementById('inp-lote').value.trim();
     var total  = carrito.reduce(function(a,i){ return a + i.precio*i.qty; }, 0);
@@ -750,7 +748,7 @@
     // Intro — solo el titular y la fecha de reserva
     var intro = '<span class="titulo-bold">¡Tu pedido está confirmado!</span>';
     if (pagoSel === 'ef') {
-      intro += '<span class="reserva-linea">Tus productos estarán reservados hasta el ' + vence + ' (inclusive).</span>';
+      intro += '<span class="reserva-linea">Tus productos estarán reservados hasta el ' + vence + '.</span>';
     }
     document.getElementById('confirm-intro-texto').innerHTML = intro;
     // Texto instructivo debajo del card
@@ -761,7 +759,7 @@
       return '<div class="ticket-row"><span>' + i.qty + '× ' + i.nombre + '</span>' +
         (i.precio > 0 ? '<span>$ ' + (i.precio * i.qty).toLocaleString('es-AR') + '</span>' : '') + '</div>';
     }).join('');
-    var pickup = pagoSel === 'ef' ? 'Hasta el ' + vence + ' (inclusive)' : 'Sin vencimiento';
+    var pickup = pagoSel === 'ef' ? 'Hasta el ' + vence + '' : 'Sin vencimiento';
     document.getElementById('det-confirm').innerHTML =
       itemsHtml +
       '<hr class="ticket-sep">' +
@@ -783,7 +781,7 @@
         'Socio: ' + datosConfirm.nombre + ' · Lote ' + datosConfirm.lote + '\n\n' +
         itemsTexto + '\n\n' +
         'Pago: ' + (datosConfirm.pago === 'ef' ? 'Efectivo al retirar' : 'Transferencia bancaria') + '\n' +
-        (datosConfirm.pago === 'ef' ? 'Reservado hasta: ' + datosConfirm.vence + ' (inclusive)' : 'Sin vencimiento') + '\n\n' +
+        (datosConfirm.pago === 'ef' ? 'Reservado hasta: ' + datosConfirm.vence + '' : 'Sin vencimiento') + '\n\n' +
         'Mostrá este número al guardia al retirar 👆';
       window.location.href = 'https://wa.me/?text=' + encodeURIComponent(msg);
     };
