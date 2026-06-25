@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="theme-color" content="#135457"/>
-  <title>La Tienda del Club — La Eugenia</title>
+  <title>El Almacén del Club — La Eugenia</title>
   <link rel="icon" type="image/png" href="https://i.imgur.com/Jjb6FcG.png"/>
   <link rel="apple-touch-icon" href="https://i.imgur.com/Jjb6FcG.png"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
@@ -44,7 +44,7 @@
     /* LOGO */
     .hero-logo-wrap { display: flex; justify-content: center; padding: 0 4%; }
     .hero-logo { width: 100%; display: block; }
-    .hero-desc { color: var(--hueso); font-size: 13px; line-height: 1.7; margin-top: 14px; margin-bottom: 8px; padding: 0 18px; }
+    .hero-desc { color: var(--hueso); font-size: 14px; line-height: 1.7; margin-top: 14px; margin-bottom: 8px; padding: 0 18px; }
     .hero-inst { color: var(--lima); font-size: 12px; font-style: italic; line-height: 1.6; padding: 0 18px; }
 
     /* SECCIONES */
@@ -60,12 +60,12 @@
     .grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; margin-bottom: 14px; }
     .cajon { background: var(--blanco); border: 2px solid var(--petroleo); border-radius: 10px; padding: 14px 10px 12px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 6px; position: relative; }
     .cajon-foto   { font-size: 32px; }
-    .cajon-nombre { font-size: 11px; font-weight: 700; color: var(--petroleo); text-transform: uppercase; letter-spacing: .5px; line-height: 1.3; }
-    .cajon-precio { font-size: 12px; font-weight: 700; color: var(--blanco); background: var(--petroleo); padding: 2px 10px; border-radius: 20px; }
+    .cajon-nombre { font-size: 12px; font-weight: 700; color: var(--petroleo); text-transform: uppercase; letter-spacing: .5px; line-height: 1.3; }
+    .cajon-precio { font-size: 14px; font-weight: 700; color: var(--blanco); background: var(--petroleo); padding: 3px 12px; border-radius: 20px; }
     .cajon-btn    { background: var(--naranja); border: 2px solid var(--petroleo); border-radius: 8px; font-family: Impact, sans-serif; font-size: 11px; letter-spacing: 1px; color: var(--petroleo); padding: 6px; cursor: pointer; width: 100%; text-transform: uppercase; }
     .badge-stock  { position: absolute; top: 7px; left: 7px; background: var(--lima); color: var(--petroleo); font-size: 8px; font-weight: 700; padding: 2px 6px; border-radius: 10px; }
     .cajon.sin-stock { filter: grayscale(1); opacity: .6; }
-    .badge-sin    { position: absolute; top: 7px; right: 7px; background: #c0392b; color: #fff; font-size: 8px; font-weight: 700; padding: 2px 6px; border-radius: 10px; }
+    .badge-sin    { position: absolute; top: 7px; left: 7px; background: #c0392b; color: #fff; font-size: 8px; font-weight: 700; padding: 2px 6px; border-radius: 10px; }
     .espera-btn   { background: transparent; border: 1.5px solid #888; border-radius: 8px; font-size: 10px; color: #666; padding: 5px; cursor: pointer; width: 100%; }
 
     /* Badge stock — izquierda */
@@ -87,9 +87,9 @@
     .cart-bar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
     .cart-bar-title  { font-family: Impact, sans-serif; font-size: 14px; color: var(--petroleo); letter-spacing: 1px; text-transform: uppercase; }
     .cart-bar-total  { font-family: Impact, sans-serif; font-size: 16px; color: var(--petroleo); }
-    .cart-empty      { font-size: 12px; color: var(--petroleo); opacity: .6; text-align: center; padding: 6px 0; }
-    .cart-item       { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
-    .cart-item-nombre{ font-size: 12px; color: var(--petroleo); font-weight: 700; flex: 1; line-height: 1.3; }
+    .cart-empty      { font-size: 14px; color: var(--petroleo); opacity: .6; text-align: center; padding: 6px 0; }
+    .cart-item       { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .cart-item-nombre{ font-size: 14px; color: var(--petroleo); font-weight: 700; flex: 1; line-height: 1.4; }
     .cart-ctrl       { display: flex; align-items: center; gap: 6px; }
     .cart-ctrl button{ background: var(--petroleo); color: var(--naranja); border: none; border-radius: 50%; width: 32px; height: 32px; font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: 700; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .cart-ctrl span  { font-size: 14px; font-weight: 700; color: var(--petroleo); min-width: 20px; text-align: center; }
@@ -100,7 +100,7 @@
     /* RESUMEN CARRITO — verde claro en internas */
     .cart-resumen { background: var(--verdecl); border: 2px solid var(--petroleo); border-radius: 10px; padding: 12px 14px; margin-bottom: 16px; }
     .cart-resumen-title { font-family: Impact, sans-serif; font-size: 12px; color: var(--petroleo); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; display: flex; justify-content: space-between; }
-    .cart-resumen-item  { font-size: 11px; color: var(--petroleo); display: flex; justify-content: space-between; margin-bottom: 3px; }
+    .cart-resumen-item  { font-size: 13px; color: var(--petroleo); display: flex; justify-content: space-between; margin-bottom: 4px; }
     .cart-resumen-total { font-family: Impact, sans-serif; font-size: 14px; color: var(--petroleo); display: flex; justify-content: space-between; border-top: 1.5px solid var(--petroleo); padding-top: 6px; margin-top: 6px; }
 
     /* BOTONES */
@@ -136,7 +136,7 @@
     .pago-radio.on { border-color: var(--petroleo); }
     .pago-radio.on::after { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--petroleo); }
     .pago-titulo { font-size: 13px; font-weight: 700; color: var(--petroleo); text-transform: uppercase; letter-spacing: .5px; }
-    .pago-desc   { font-size: 11px; color: var(--gris); margin-top: 3px; line-height: 1.5; }
+    .pago-desc   { font-size: 13px; color: var(--gris); margin-top: 3px; line-height: 1.5; }
     .banco-card  { background: var(--petroleo); border: 2px solid var(--lima); border-radius: 10px; padding: 14px; margin: 12px 0; }
     .banco-row   { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
     .banco-row:last-child { margin-bottom: 0; }
@@ -144,7 +144,7 @@
     .banco-val   { font-size: 12px; font-weight: 700; color: var(--lima); font-family: monospace; }
 
     /* CONFIRMACIÓN */
-    .confirm-intro { font-size: 13px; color: var(--hueso); line-height: 1.7; margin-bottom: 16px; text-align: center; }
+    .confirm-intro { font-size: 14px; color: var(--hueso); line-height: 1.7; margin-bottom: 16px; text-align: center; }
     .confirm-intro .titulo-bold { display: block; font-weight: 700; font-size: 14px; margin-bottom: 6px; }
     .confirm-intro .reserva-linea { display: block; color: var(--lima); font-weight: 400; margin-top: 8px; }
 
@@ -155,13 +155,13 @@
     .confirm-brand-text { font-family: Impact, sans-serif; font-size: 18px; color: #000; letter-spacing: 2px; text-transform: uppercase; line-height: 1.1; }
     .confirm-numero  { font-family: Impact, sans-serif; font-size: 36px; color: var(--petroleo); letter-spacing: 3px; margin-bottom: 6px; }
     .confirm-badge   { display: inline-block; background: var(--lima); color: var(--petroleo); font-size: 10px; font-weight: 700; letter-spacing: 2px; padding: 4px 14px; border-radius: 20px; margin-bottom: 14px; }
-    .ticket-detalle { text-align: left; font-size: 12px; color: var(--gris); line-height: 1.9; }
+    .ticket-detalle { text-align: left; font-size: 14px; color: var(--gris); line-height: 2; }
     .ticket-detalle strong { color: var(--petroleo); }
     .ticket-sep { border: none; border-top: 1.5px solid #e0e0e0; margin: 10px 0; }
     .ticket-row { display: flex; justify-content: space-between; margin-bottom: 3px; }
 
     /* Aviso verde */
-    .confirm-aviso { background: var(--verdecl); border-radius: 10px; padding: 14px; font-size: 12px; color: var(--petroleo); line-height: 1.6; margin-bottom: 14px; }
+    .confirm-aviso { background: var(--verdecl); border-radius: 10px; padding: 14px; font-size: 14px; color: var(--petroleo); line-height: 1.7; margin-bottom: 14px; }
     .confirm-aviso p { margin-bottom: 12px; }
 
     /* POPUP */
@@ -180,8 +180,8 @@
     .pedido-card  { background: var(--blanco); border-radius: 10px; padding: 13px; margin-bottom: 10px; border-left: 4px solid var(--naranja); }
     .pedido-card.transf { border-left-color: var(--lima); }
     .pedido-num   { font-family: Impact, sans-serif; font-size: 15px; color: var(--petroleo); letter-spacing: 1px; }
-    .pedido-socio { font-size: 11px; color: var(--gris); margin: 3px 0 5px; }
-    .pedido-items { font-size: 12px; color: var(--petroleo); margin-bottom: 8px; }
+    .pedido-socio { font-size: 13px; color: var(--gris); margin: 3px 0 5px; }
+    .pedido-items { font-size: 14px; color: var(--petroleo); margin-bottom: 8px; }
     .pedido-estado{ display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 3px 9px; border-radius: 10px; text-transform: uppercase; }
     .est-pend { background: #fff3cc; color: #8B6914; }
     .est-conf { background: #e8f5e8; color: #2d6e30; }
@@ -207,12 +207,12 @@
 <!-- ══ HOME ══ -->
 <div class="screen active" id="s-home">
   <div class="hero">
-    <img class="toldo-hero" src="https://i.imgur.com/1BmESsb.png" alt="La Tienda del Club">
+    <img class="toldo-hero" src="https://i.imgur.com/1BmESsb.png" alt="El Almacén del Club">
     <div class="hero-body">
       <div class="hero-logo-wrap">
-        <img class="hero-logo" src="https://i.imgur.com/fwVDZWC.png" alt="La Tienda del Club">
+        <img class="hero-logo" src="https://i.imgur.com/ezj8309.png" alt="El Almacén del Club">
       </div>
-      <p class="hero-desc">La Tienda del Club pone a disposición de los socios productos que representan un aporte individual y, al mismo tiempo, una contribución colectiva para seguir mejorando nuestro entorno.</p>
+      <p class="hero-desc">El Almacén del Club pone a disposición de los socios productos que representan un aporte individual y, al mismo tiempo, una contribución colectiva para seguir mejorando nuestro entorno.</p>
       <p class="hero-inst">Elegí los productos disponibles, realizá tu pedido y retiralo en la garita.</p>
     </div>
   </div>
@@ -244,6 +244,22 @@
         <div class="cajon-precio" style="background:#aaa;">$ 10.000</div>
         <button class="cajon-btn" style="background:#ccc;border-color:#aaa;color:#888;cursor:default;">Sin stock</button>
         <button class="espera-btn" onclick="goTo('s-espera')">Avisame cuando llegue</button>
+      </div>
+      <div class="cajon" id="cajon-2">
+        <span class="badge-stock">Stock: 8</span>
+        <div class="cajon-selected-badge" id="badge-sel-2"></div>
+        <div class="cajon-foto"><img src="https://i.imgur.com/BHMmfMH.png" style="width:84px;height:84px;object-fit:contain;"></div>
+        <div class="cajon-nombre">Bolson Big Bag 90×90×90</div>
+        <div class="cajon-precio">$ 15.000</div>
+        <button class="cajon-btn" onclick="agregar(2,'Bolson Big Bag 90×90×90',15000)">+ Agregar</button>
+      </div>
+      <div class="cajon" id="cajon-3">
+        <span class="badge-stock">Stock: 20</span>
+        <div class="cajon-selected-badge" id="badge-sel-3"></div>
+        <div class="cajon-foto"><img src="https://i.imgur.com/EpMG4Zb.png" style="width:84px;height:84px;object-fit:contain;"></div>
+        <div class="cajon-nombre">Sticker Vehicular (Seguridad)</div>
+        <div class="cajon-precio">$ 5.000</div>
+        <button class="cajon-btn" onclick="agregar(3,'Sticker Vehicular (Seguridad)',5000)">+ Agregar</button>
       </div>
       <div class="cajon" style="border-style:dashed;border-color:var(--verdecl);opacity:.4;cursor:default;">
         <div class="cajon-foto" style="opacity:.3;font-size:22px;">+</div>
@@ -373,10 +389,10 @@
 
     <div class="confirm-card">
       <div class="confirm-brand">
-        <img src="https://i.imgur.com/LB9NODF.png" alt="La Tienda del Club — La Eugenia" style="width:306px;object-fit:contain;">
+        <img src="https://i.imgur.com/bAgbxnB.png" alt="El Almacén del Club — La Eugenia" style="width:398px;object-fit:contain;">
       </div>
       <div style="font-size:11px;color:var(--gris);margin-bottom:4px;letter-spacing:1px;text-transform:uppercase;">Número de pedido</div>
-      <div class="confirm-numero" id="num-ped">TC Nº 000001</div>
+      <div class="confirm-numero" id="num-ped">AC N° 000001</div>
       <div class="confirm-badge" id="badge-tipo">EFECTIVO</div>
       <div class="ticket-detalle" id="det-confirm"></div>
       <hr class="ticket-sep" style="margin-top:14px;margin-bottom:12px;">
@@ -444,7 +460,7 @@
     <div class="sec-sub">Pendientes de entrega</div>
     <div class="pedido-card transf">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-        <div class="pedido-num">TC Nº 000042</div>
+        <div class="pedido-num">AC N° 000042</div>
         <span class="pedido-estado est-conf">Transferencia ✓</span>
       </div>
       <div class="pedido-socio">Juan Pérez · Lote M87 · 3764 112233</div>
@@ -457,7 +473,7 @@
     </div>
     <div class="pedido-card">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-        <div class="pedido-num">TC Nº 000043</div>
+        <div class="pedido-num">AC N° 000043</div>
         <span class="pedido-estado est-pend">Efectivo · vence 26/06</span>
       </div>
       <div class="pedido-socio">Ana Torres · Lote B23</div>
@@ -558,7 +574,7 @@
   var datosConfirm = {};
 
   // IDs de cajones con indicador de selección
-  var cajonesConBadge = [0, 1];
+  var cajonesConBadge = [0, 1, 2, 3];
 
   function goTo(id) {
     document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
@@ -733,7 +749,7 @@
   }
 
   function confirmar() {
-    var num    = 'TC Nº ' + String(pedNum).padStart(6,'0'); pedNum++;
+    var num    = 'AC N° ' + String(pedNum).padStart(6,'0'); pedNum++;
     var nombre = document.getElementById('inp-nombre').value.trim();
     var lote   = document.getElementById('inp-lote').value.trim();
     var total  = carrito.reduce(function(a,i){ return a + i.precio*i.qty; }, 0);
@@ -776,7 +792,7 @@
       var itemsTexto = datosConfirm.items.map(function(i){
         return i.qty + '× ' + i.nombre + (i.precio > 0 ? ' — $' + (i.precio*i.qty).toLocaleString('es-AR') : '');
       }).join('\n');
-      var msg = '🛍️ *La Tienda del Club*\n\n' +
+      var msg = '🛍️ *El Almacén del Club*\n\n' +
         'Pedido: *' + datosConfirm.num + '*\n' +
         'Socio: ' + datosConfirm.nombre + ' · Lote ' + datosConfirm.lote + '\n\n' +
         itemsTexto + '\n\n' +
