@@ -152,7 +152,7 @@
 
     .confirm-card { background: var(--blanco); border-radius: 14px; padding: 20px; margin-bottom: 14px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
     .confirm-brand { display: flex; flex-direction: column; align-items: center; margin-bottom: 10px; gap: 1px; }
-    .confirm-brand img { width: 88px; height: 88px; object-fit: contain; }
+    .confirm-brand img { width: 114px; height: 114px; object-fit: contain; }
     .confirm-brand-sub  { font-family: 'Roboto', sans-serif; font-size: 11px; font-weight: 400; color: #000; letter-spacing: 1px; line-height: 1.2; }
     .confirm-brand-text { font-family: Impact, sans-serif; font-size: 18px; color: #000; letter-spacing: 2px; text-transform: uppercase; line-height: 1.1; }
     .confirm-numero  { font-family: Impact, sans-serif; font-size: 36px; color: var(--petroleo); letter-spacing: 3px; margin-bottom: 6px; }
@@ -278,7 +278,7 @@
           <div class="cajon-nombre-2">Alerta Vecinal</div>
           <div class="cajon-precio" style="background:#aaa;">$ 10.000</div>
         </div>
-        <button class="cajon-btn" style="background:var(--naranja);border-color:var(--petroleo);color:var(--petroleo);cursor:pointer;filter:none;" onclick="goTo('s-espera')">Avisame cuando ingresen</button>
+        <button class="cajon-btn" style="background:var(--naranja);border-color:var(--petroleo);color:var(--petroleo);cursor:pointer;filter:none;" style="cursor:default;">No disponible</button>
       </div>
       <div class="cajon" id="cajon-2">
         <span class="badge-stock">Stock: 8</span>
@@ -330,7 +330,7 @@
   </div>
 
   <hr class="divisor">
-  <div class="sec-petroleo" style="padding-top:24px;">
+  <div class="sec-petroleo" style="padding-top:24px;padding-bottom:28px;">
     <a class="btn btn-cgv" href="https://clubdecampolaeugenia.taplink.site/" target="_top">IR AL CENTRO DE GESTIÓN VECINAL</a>
   </div>
 
@@ -343,7 +343,7 @@
     <button class="topbar-back" onclick="goTo('s-home')">← Volver</button>
     <span class="topbar-title">Tus datos</span>
   </div>
-  <div class="sec-crema" style="flex:1;">
+  <div class="sec-crema" style="flex:1;padding-bottom:28px;">
     <div class="cart-resumen" id="resumen-ident" style="display:none;"></div>
 
     <div class="form-group">
@@ -389,7 +389,7 @@
     <button class="topbar-back" onclick="goTo('s-identificacion')">← Volver</button>
     <span class="topbar-title">Forma de pago</span>
   </div>
-  <div class="sec-crema" style="flex:1;">
+  <div class="sec-crema" style="flex:1;padding-bottom:28px;">
     <div class="cart-resumen" id="resumen-pago" style="display:none;"></div>
     <div class="pago-opt selected" id="opt-ef" onclick="selPago('ef')">
       <div class="pago-radio on" id="r-ef"></div>
@@ -622,7 +622,7 @@
   <!-- HERO -->
   <div style="background:var(--hueso);text-align:center;padding:14px 16px 10px;border-bottom:2px solid var(--petroleo);">
     <div class="depo-badge" style="background:var(--lima);color:var(--petroleo);margin-bottom:2px;"><span class="depo-dot" style="background:var(--petroleo);"></span> Campaña activa</div>
-    <img src="https://i.imgur.com/as0SOAO.png" style="width:200px;display:block;margin:0 auto 2px;">
+    <img src="https://i.imgur.com/as0SOAO.png" style="width:200px;display:block;margin:0 auto 0;">
     <div style="display:inline-block;border:1.5px solid var(--naranja);border-radius:4px;padding:2px 8px;font-size:9px;color:var(--naranja);letter-spacing:1.5px;text-transform:uppercase;font-weight:700;">Edición anual · $5.000 por bono</div>
   </div>
   <!-- MÓDULO ÚNICO DE SELECCIÓN -->
@@ -676,7 +676,7 @@
       <div id="depo-sel-empty" style="font-size:11px;color:var(--petroleo);opacity:.7;text-align:center;padding:2px 0;">Tocá un número para seleccionarlo</div>
       <div id="depo-sel-items" style="max-height:66px;overflow-y:auto;"></div>
       <div id="depo-sel-total" style="display:none;font-family:Impact,sans-serif;font-size:14px;color:var(--petroleo);justify-content:space-between;border-top:1.5px solid var(--petroleo);padding-top:5px;margin-top:5px;"><span>Total</span><span id="depo-sel-monto">$ 0</span></div>
-      <button id="depo-btn-continuar" style="display:none;width:100%;background:var(--naranja);color:var(--petroleo);border:2px solid var(--petroleo);border-radius:8px;font-family:Impact,sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:11px;cursor:pointer;margin-top:8px;" onclick="goTo('s-depo-datos')">Continuar con la reserva →</button>
+      <button id="depo-btn-continuar" style="display:none;width:100%;background:var(--naranja);color:var(--petroleo);border:2px solid var(--petroleo);border-radius:8px;font-family:Impact,sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:11px;cursor:pointer;margin-top:8px;margin-bottom:6px;" onclick="goTo('s-depo-datos')">Continuar con la reserva →</button>
     </div>
   </div>
 </div>
@@ -690,11 +690,41 @@
   </div>
   <div class="sec-crema" style="flex:1;">
     <div id="depo-selbar-datos" style="background:var(--verdecl);border:2px solid var(--petroleo);border-radius:10px;padding:12px 14px;margin-bottom:14px;"></div>
-    <div style="font-size:11px;color:var(--gris);margin-bottom:12px;line-height:1.5;">Estos datos son requeridos por el IPLYC para completar el registro oficial del Deporbono</div>
-    <div class="form-group"><label class="form-label">Nombre y apellido <span class="req">*</span></label><input class="form-input" type="text" id="depo-nombre" placeholder="Ej: María González" autocomplete="name"></div>
-    <div class="form-group"><label class="form-label">DNI <span class="req">*</span></label><input class="form-input" type="number" id="depo-dni" placeholder="Ej: 28329663"><div class="form-hint">Requerido para el registro oficial del Deporbono</div></div>
-    <div class="form-group"><label class="form-label">Teléfono <span class="req">*</span></label><input class="form-input" type="tel" id="depo-tel" placeholder="Ej: 3764 123456"><div class="form-hint">Solo para contactarte si hay algún inconveniente</div></div>
-    <button class="btn btn-naranja" onclick="goTo('s-depo-pago')">Continuar →</button>
+    <div style="font-size:11px;color:var(--gris);margin-bottom:12px;line-height:1.5;">Estos datos son exigidos por el IPLYC para completar el registro oficial del Deporbono</div>
+    <div class="form-group">
+      <label class="form-label">Nombre y apellido <span class="req">*</span></label>
+      <input class="form-input" type="text" id="depo-nombre" placeholder="Ej: María González" autocomplete="name">
+      <div class="form-error" id="depo-err-nombre" style="font-size:11px;color:#c0392b;margin-top:4px;display:none;">Ingresá tu nombre y apellido</div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">DNI <span class="req">*</span></label>
+      <input class="form-input" type="number" id="depo-dni" placeholder="Ej: 28329663" oninput="soloNumeros(this)">
+      <div class="form-hint">Exigido por el IPLYC para el registro oficial</div>
+      <div class="form-error" id="depo-err-dni" style="font-size:11px;color:#c0392b;margin-top:4px;display:none;">Ingresá un DNI válido</div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Teléfono <span class="req">*</span></label>
+      <div class="tel-wrap">
+        <select class="tel-pais" id="depo-pais-cod" onchange="depoPaisCod()">
+          <option value="54" selected>🇦🇷 +54 9</option>
+          <option value="55">🇧🇷 +55</option>
+          <option value="595">🇵🇾 +595</option>
+          <option value="598">🇺🇾 +598</option>
+          <option value="56">🇨🇱 +56</option>
+          <option value="591">🇧🇴 +591</option>
+          <option value="34">🇪🇸 +34</option>
+          <option value="1">🇺🇸 +1</option>
+          <option value="otro">🌐 Otro</option>
+        </select>
+        <input class="form-input tel-num" type="tel" id="depo-tel" placeholder="Ej: 3764123456" oninput="soloNumeros(this)">
+      </div>
+      <div id="depo-otro-pais-wrap" style="display:none;margin-top:8px;">
+        <input class="form-input" type="text" id="depo-otro-pais" placeholder="Código de país (ej: 44)" maxlength="4" oninput="soloNumeros(this)">
+      </div>
+      <div class="form-hint">Lo usamos solo si hay algún inconveniente con tu reserva</div>
+      <div class="form-error" id="depo-err-tel" style="font-size:11px;color:#c0392b;margin-top:4px;display:none;">Ingresá un número de teléfono válido</div>
+    </div>
+    <button class="btn btn-naranja" onclick="depoValidarYContinuar()">Continuar →</button>
   </div>
 </div>
 
@@ -1267,6 +1297,48 @@
       document.getElementById('depo-po-'+t).classList.toggle('selected', t===tipo);
       document.getElementById('depo-pr-'+t).classList.toggle('on', t===tipo);
     });
+  }
+
+  function depoPaisCod() {
+    var val = document.getElementById('depo-pais-cod').value;
+    document.getElementById('depo-otro-pais-wrap').style.display = val === 'otro' ? 'block' : 'none';
+  }
+
+  function depoValidarYContinuar() {
+    var ok = true;
+    var nombre = document.getElementById('depo-nombre').value.trim();
+    var dni    = document.getElementById('depo-dni').value.trim();
+    var tel    = document.getElementById('depo-tel').value.trim();
+
+    if (nombre.length < 3) {
+      document.getElementById('depo-err-nombre').style.display = 'block';
+      document.getElementById('depo-nombre').classList.add('error');
+      ok = false;
+    } else {
+      document.getElementById('depo-err-nombre').style.display = 'none';
+      document.getElementById('depo-nombre').classList.remove('error');
+      document.getElementById('depo-nombre').value = capitalizarNombre(nombre);
+    }
+
+    if (dni.length < 7) {
+      document.getElementById('depo-err-dni').style.display = 'block';
+      document.getElementById('depo-dni').classList.add('error');
+      ok = false;
+    } else {
+      document.getElementById('depo-err-dni').style.display = 'none';
+      document.getElementById('depo-dni').classList.remove('error');
+    }
+
+    if (tel.length < 8) {
+      document.getElementById('depo-err-tel').style.display = 'block';
+      document.getElementById('depo-tel').classList.add('error');
+      ok = false;
+    } else {
+      document.getElementById('depo-err-tel').style.display = 'none';
+      document.getElementById('depo-tel').classList.remove('error');
+    }
+
+    if (ok) goTo('s-depo-pago');
   }
 
   function depoConfirmar() {
